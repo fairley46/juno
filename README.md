@@ -2,34 +2,105 @@
 
 **AI-facilitated onboarding for enterprise teams adopting OpenCode.**
 
-Most AI onboarding fails because it lives outside the tool — a separate course, a PDF, a slide deck. Learners read it, forget it, and then face the actual product alone.
+Most AI onboarding fails because it lives outside the tool — a separate course, a PDF, a slide deck. Learners finish it, forget it, and then face the actual product alone on day one.
 
-This program runs entirely inside OpenCode. The AI itself is the facilitator. You open a folder, the AI greets you, and you go through 15 short modules together at your pace — learning by using the thing you're learning about.
-
----
-
-## What It Looks Like
-
-When a learner opens this folder in OpenCode:
-
-1. The AI reads `AGENTS.md` and understands it's a facilitator
-2. It checks `PROGRESS.md` and picks up where the learner left off
-3. It introduces itself, explains the program, and asks if they're ready to start
-4. It presents each module conversationally — summarizing, inviting questions, running exercises
-5. After each module it updates `PROGRESS.md` and moves on
-
-The learner never has to type a command. They just talk to the AI.
+This program runs entirely inside OpenCode. The AI is the facilitator. You open a folder, the AI greets you, and you work through 15 short modules together at your own pace — learning by using the thing you're learning about.
 
 ---
 
-## For Learners: Getting Started
+## What a Session Looks Like
 
-### Requirements
+```
+AI:   Welcome back. You completed Module 2 last session — you're on Module 3:
+      "When to Trust AI Output."
 
-- OpenCode (desktop or terminal)
-- Node.js 20+ (one-time setup only)
+      Ready to pick up where you left off, or do you want a quick recap of
+      Module 2 first?
 
-### Setup
+You:  Quick recap, then let's go.
+
+AI:   Module 2 covered how OpenCode works under the hood — the model reads
+      your context files, reasons over them, and responds. It does not have
+      memory between sessions unless you provide it.
+
+      Module 3 is about calibration: how to know when to trust, verify, or
+      push back on what the AI tells you. It's one of the most practically
+      useful habits in this whole program.
+
+      The core framework is two questions...
+```
+
+The learner never runs a command. They just talk to the AI. Progress is saved automatically after each module.
+
+---
+
+## How It Works
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                      OpenCode                           │
+│                                                         │
+│   AGENTS.md ──────► AI reads facilitator instructions  │
+│   org/ ────────────► AI reads your org's policy        │
+│   PROGRESS.md ─────► AI knows where you left off       │
+│                  │                                      │
+│                  ▼                                      │
+│         Conversational session                         │
+│         Module presentation                            │
+│         Exercise + feedback                            │
+│                  │                                      │
+│                  ▼                                      │
+│         PROGRESS.md updated ──► next session picks up  │
+└─────────────────────────────────────────────────────────┘
+```
+
+The key insight: OpenCode reads context files at session start. This repo uses that to turn OpenCode into a facilitator. No app, no web server, no build step.
+
+**The five files that make it work:**
+
+| File | Role |
+|------|------|
+| `AGENTS.md` | Tells the AI its role, the curriculum, the tone, escalation rules |
+| `modules/` | 15 plain markdown lesson files |
+| `org/` | Your org's policy, approved tools, and escalation contacts |
+| `PROGRESS.md` | Per-learner state — created by setup, updated after each module |
+| `manifest.json` | Ordered module list — add a line here to add a module |
+
+---
+
+## Learner Journey
+
+```
+git clone → npm run setup → open in OpenCode
+                                    │
+                    ┌───────────────▼───────────────┐
+                    │   AI greets you               │
+                    │   Checks PROGRESS.md          │
+                    │   Starts (or resumes)         │
+                    └───────────────┬───────────────┘
+                                    │
+                    ┌───────────────▼───────────────┐
+                    │   Module presentation         │◄──┐
+                    │   Questions welcome           │   │
+                    │   Short exercise              │   │
+                    │   PROGRESS.md updated         │   │
+                    └───────────────┬───────────────┘   │
+                                    │                   │
+                              More modules? ────────────┘
+                                    │ No
+                    ┌───────────────▼───────────────┐
+                    │   Program complete            │
+                    │   ~2 hours across sessions    │
+                    └───────────────────────────────┘
+```
+
+---
+
+## Getting Started
+
+### For Learners
+
+**Requirements:** OpenCode (desktop or terminal) · Node.js 20+
 
 ```bash
 git clone https://github.com/fairley46/opencode-onboarding.git
@@ -39,29 +110,29 @@ npm run setup
 
 Then open the `opencode-onboarding` folder in OpenCode. That's it.
 
-`npm run setup` copies org config templates and creates your `PROGRESS.md`. It runs once. After that, everything happens inside OpenCode.
+`npm run setup` creates your personal `PROGRESS.md` and copies the org config templates. It runs once. Everything after that happens in the conversation.
 
 ---
 
-## For Admins: Rolling Out to Your Team
+### For Admins: Rolling Out to Your Team
 
-### 1. Fill in org config
+**Step 1 — Fill in org config**
 
-Before giving this to learners, edit three files:
+Before giving this to learners, edit three files in `org/`:
 
 | File | What it controls |
 |------|-----------------|
-| `org/org-context.md` | Approved use, disallowed use, governance notes |
+| `org/org-context.md` | Approved uses, disallowed uses, governance notes |
 | `org/escalation.md` | Who learners contact for policy, AI, and security questions |
-| `org/approved-mcps.json` | Which MCP servers learners are allowed to use |
+| `org/approved-mcps.json` | Which MCP servers learners are allowed to connect |
 
-The `org/*.template.*` files show the expected format for each. The AI facilitator reads the live files at the start of every session.
+The `org/*.template.*` files show the expected format. The AI reads these at the start of every session.
 
-### 2. Share the repo
+**Step 2 — Share the repo**
 
-Fork or copy this repo, fill in the org config, then share it with learners. Each learner runs `npm run setup` themselves — their `PROGRESS.md` is local and gitignored, so it won't conflict across users.
+Fork or copy this repo, fill in org config, then share it with learners. Each learner runs `npm run setup` — their `PROGRESS.md` is local and gitignored, so progress won't conflict across users.
 
-### 3. Adding your own modules
+**Step 3 — Optionally add your own modules**
 
 One markdown file + one line in `manifest.json`. No code changes. See [CUSTOMIZATION.md](CUSTOMIZATION.md).
 
@@ -69,7 +140,7 @@ One markdown file + one line in `manifest.json`. No code changes. See [CUSTOMIZA
 
 ## Curriculum
 
-15 modules, ~2 hours total. Each has a short exercise.
+15 modules · ~2 hours total · each with a short exercise
 
 | # | Module | Focus |
 |---|--------|-------|
@@ -83,23 +154,11 @@ One markdown file + one line in `manifest.json`. No code changes. See [CUSTOMIZA
 | 8 | Guard Rails and Permissions | Least privilege; review habits |
 | 9 | What MCP Is and Why It Matters | Connectors; how to add one; what to check |
 | 10 | Using Markdown to Shape Behavior | Guidance files; AGENTS.md; real template |
-| 11 | Asking Questions Across Tools | Getting useful answers from multiple sources |
+| 11 | Asking Questions Across Tools | Multi-source prompting; conflicting sources; source attribution |
 | 12 | Build a Tiny Helper Tool | Hands-on: read-only policy search in ~70 lines |
 | 13 | Tokens and Practical Limits | ~300 tokens/page; practical sizing heuristics |
-| 14 | First Useful Workflows | Three concrete prompt templates to use tomorrow |
+| 14 | First Useful Workflows | Four-part prompt framework; three copy-and-adapt templates |
 | 15 | Troubleshooting and Next Steps | When things go wrong; where to go next |
-
----
-
-## How It Works
-
-This is a workspace-context program, not a CLI or a web app. The key insight: OpenCode already reads context files at session start. This repo uses that to make OpenCode a facilitator.
-
-- **`AGENTS.md`** — the orchestration file. Tells OpenCode its role, the curriculum, how to run exercises, the tone to use, org policy routing, and when to escalate. Edit this to change facilitator behavior.
-- **`modules/`** — the content. Plain markdown. OpenCode reads and presents each one conversationally.
-- **`org/`** — org-specific context. Fill these in before rollout.
-- **`PROGRESS.md`** — learner state. Created by setup, updated by OpenCode, human-readable and human-editable.
-- **`manifest.json`** — the module list. Add an entry here to add a module.
 
 ---
 
@@ -112,8 +171,8 @@ PROGRESS.md             Learner progress (created by setup, gitignored)
 manifest.json           Ordered module list with time estimates
 setup.js                One-time scaffolding (copies templates, creates PROGRESS.md)
 modules/                15 lesson files
-exercises/              Exercise prompts + templates/helper-tool example
-org/                    Org config files (fill in before rollout) + *.template.* reference files
+exercises/              Exercise prompts + helper-tool template
+org/                    Org config (fill in before rollout) + *.template.* reference files
 docs/                   Backlog and implementation notes
 archive/cli/            Prior Node.js CLI architecture (preserved for reference)
 ```
@@ -123,8 +182,8 @@ archive/cli/            Prior Node.js CLI architecture (preserved for reference)
 ## Security
 
 - No telemetry, no install hooks, no external network calls
-- Local-only learner state
-- Read-only-first training patterns throughout
+- Local-only learner state — `PROGRESS.md` never leaves the machine
+- Read-only-first patterns throughout the curriculum and exercises
 
 See [SECURITY.md](SECURITY.md) and [THREAT_MODEL.md](THREAT_MODEL.md) for full details.
 
@@ -133,3 +192,7 @@ See [SECURITY.md](SECURITY.md) and [THREAT_MODEL.md](THREAT_MODEL.md) for full d
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE)

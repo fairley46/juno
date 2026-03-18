@@ -8,6 +8,19 @@ For customization instructions (how to add modules, fill in org config, etc.) se
 
 ## High Priority
 
+### Org config — fill in before any real learner uses this
+
+The three live org config files still contain placeholder instructions. Without real values, learners will get unhelpful responses when they ask policy questions.
+
+**What needs to be filled in:**
+- [ ] `org/org-context.md` — approved uses, disallowed uses, governance notes for your org
+- [ ] `org/escalation.md` — real names and contact info for AI questions, policy questions, security issues
+- [ ] `org/approved-mcps.json` — actual approved MCP servers for your org (or empty array if none yet)
+
+See `org/*.template.*` files for the expected format.
+
+---
+
 ### End-to-end facilitator test
 
 The full experience hasn't been cold-tested in OpenCode. Before rollout:
