@@ -14,6 +14,24 @@ Think of OpenCode as a guided work partner. It can help you read, summarize, com
 - good results come from clear goals and good boundaries
 - governance is part of the product, not a separate compliance step
 
+## What This Doesn't Mean
+
+Using AI tools does not mean your role is being replaced. It means your role is changing — the same way spreadsheets changed accounting, or search engines changed research.
+
+What changes: the time you spend on first drafts, document comparisons, and routine lookups.
+
+What doesn't change: your judgment, your accountability, your relationships, and your knowledge of what "good" looks like in your field. Those are what AI cannot do.
+
+If you have concerns about what this means for your role, that's a legitimate question. Raise it with your manager. This program won't answer it for you — but it will help you understand what the tool actually does, which is the right foundation for that conversation.
+
+## It's Fine to Be Skeptical
+
+You don't have to be excited about this. Skepticism is useful — it keeps you reviewing outputs carefully and asking whether the tool actually helped.
+
+What we ask is that you stay curious. If something doesn't make sense, ask. If an exercise feels pointless, say so. If the AI says something wrong, flag it. This program works best when you engage honestly, not when you perform enthusiasm.
+
+There are no wrong questions here.
+
 ## A Practical Example
 
 Instead of asking, "Can AI do my job?", a better starting question is, "Can OpenCode help me understand this document, compare these two options, or draft a first pass I can review?"
