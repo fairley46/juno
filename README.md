@@ -1,17 +1,15 @@
 # OpenCode Onboarding
 
-**AI-facilitated onboarding for enterprise teams adopting OpenCode.**
+AI-facilitated onboarding for enterprise teams adopting OpenCode.
 
-Most AI onboarding fails because it lives outside the tool — a separate course, a PDF, a slide deck. Learners finish it, forget it, and then face the actual product alone on day one.
-
-This program runs entirely inside OpenCode. The AI is the facilitator. You open a folder, the AI greets you, and you work through 15 short modules together at your own pace — learning by using the thing you're learning about.
+Most AI onboarding fails because it lives outside the tool. You read a course, forget it, and then face the actual product alone on day one. This program runs entirely inside OpenCode. The AI is the facilitator. You open a folder, the AI greets you, and you work through 15 short modules together at your own pace, learning by using the thing you're learning about.
 
 ---
 
 ## What a Session Looks Like
 
 ```
-AI:   Welcome back. You completed Module 2 last session — you're on Module 3:
+AI:   Welcome back. You completed Module 2 last session. You're on Module 3:
       "When to Trust AI Output."
 
       Ready to pick up where you left off, or do you want a quick recap of
@@ -19,7 +17,7 @@ AI:   Welcome back. You completed Module 2 last session — you're on Module 3:
 
 You:  Quick recap, then let's go.
 
-AI:   Module 2 covered how OpenCode works under the hood — the model reads
+AI:   Module 2 covered how OpenCode works under the hood. The model reads
       your context files, reasons over them, and responds. It does not have
       memory between sessions unless you provide it.
 
@@ -50,48 +48,48 @@ The learner never runs a command. They just talk to the AI. Progress is saved au
 │         Exercise + feedback                            │
 │                  │                                      │
 │                  ▼                                      │
-│         PROGRESS.md updated ──► next session picks up  │
+│         PROGRESS.md updated, next session picks up     │
 └─────────────────────────────────────────────────────────┘
 ```
 
-The key insight: OpenCode reads context files at session start. This repo uses that to turn OpenCode into a facilitator. No app, no web server, no build step.
+OpenCode already reads context files at session start. This repo uses that to turn OpenCode into a facilitator. No separate app, no web server, no build step.
 
 **The five files that make it work:**
 
 | File | Role |
 |------|------|
-| `AGENTS.md` | Tells the AI its role, the curriculum, the tone, escalation rules |
+| `AGENTS.md` | Tells the AI its role, the curriculum, the tone, and escalation rules |
 | `modules/` | 15 plain markdown lesson files |
 | `org/` | Your org's policy, approved tools, and escalation contacts |
-| `PROGRESS.md` | Per-learner state — created by setup, updated after each module |
-| `manifest.json` | Ordered module list — add a line here to add a module |
+| `PROGRESS.md` | Per-learner state, created by setup and updated after each module |
+| `manifest.json` | Ordered module list. Add a line here to add a module. |
 
 ---
 
 ## Learner Journey
 
 ```
-git clone → npm run setup → open in OpenCode
-                                    │
-                    ┌───────────────▼───────────────┐
-                    │   AI greets you               │
-                    │   Checks PROGRESS.md          │
-                    │   Starts (or resumes)         │
-                    └───────────────┬───────────────┘
-                                    │
-                    ┌───────────────▼───────────────┐
-                    │   Module presentation         │◄──┐
-                    │   Questions welcome           │   │
-                    │   Short exercise              │   │
-                    │   PROGRESS.md updated         │   │
-                    └───────────────┬───────────────┘   │
-                                    │                   │
-                              More modules? ────────────┘
-                                    │ No
-                    ┌───────────────▼───────────────┐
-                    │   Program complete            │
-                    │   ~2 hours across sessions    │
-                    └───────────────────────────────┘
+git clone -> npm run setup -> open in OpenCode
+                                    |
+                    +---------------v---------------+
+                    |   AI greets you               |
+                    |   Checks PROGRESS.md          |
+                    |   Starts or resumes           |
+                    +---------------+---------------+
+                                    |
+                    +---------------v---------------+
+                    |   Module presentation         |<--+
+                    |   Questions welcome           |   |
+                    |   Short exercise              |   |
+                    |   PROGRESS.md updated         |   |
+                    +---------------+---------------+   |
+                                    |                   |
+                              More modules? ------------+
+                                    | No
+                    +---------------v---------------+
+                    |   Program complete            |
+                    |   ~2 hours across sessions    |
+                    +-------------------------------+
 ```
 
 ---
@@ -100,7 +98,7 @@ git clone → npm run setup → open in OpenCode
 
 ### For Learners
 
-**Requirements:** OpenCode (desktop or terminal) · Node.js 20+
+**Requirements:** OpenCode (desktop or terminal) and Node.js 20+
 
 ```bash
 git clone https://github.com/fairley46/opencode-onboarding.git
@@ -116,7 +114,7 @@ Then open the `opencode-onboarding` folder in OpenCode. That's it.
 
 ### For Admins: Rolling Out to Your Team
 
-**Step 1 — Fill in org config**
+**Step 1: Fill in org config**
 
 Before giving this to learners, edit three files in `org/`:
 
@@ -128,19 +126,19 @@ Before giving this to learners, edit three files in `org/`:
 
 The `org/*.template.*` files show the expected format. The AI reads these at the start of every session.
 
-**Step 2 — Share the repo**
+**Step 2: Share the repo**
 
-Fork or copy this repo, fill in org config, then share it with learners. Each learner runs `npm run setup` — their `PROGRESS.md` is local and gitignored, so progress won't conflict across users.
+Fork or copy this repo, fill in the org config, then share it with learners. Each learner runs `npm run setup` themselves. Their `PROGRESS.md` is local and gitignored, so progress won't conflict across users.
 
-**Step 3 — Optionally add your own modules**
+**Step 3: Optionally add your own modules**
 
-One markdown file + one line in `manifest.json`. No code changes. See [CUSTOMIZATION.md](CUSTOMIZATION.md).
+One markdown file plus one line in `manifest.json`. No code changes needed. See [CUSTOMIZATION.md](CUSTOMIZATION.md).
 
 ---
 
 ## Curriculum
 
-15 modules · ~2 hours total · each with a short exercise
+15 modules, about 2 hours total, each with a short exercise.
 
 | # | Module | Focus |
 |---|--------|-------|
@@ -165,16 +163,16 @@ One markdown file + one line in `manifest.json`. No code changes. See [CUSTOMIZA
 ## Project Structure
 
 ```
-AGENTS.md               Facilitator instructions — OpenCode reads this first
+AGENTS.md               Facilitator instructions, OpenCode reads this first
 CUSTOMIZATION.md        How to add modules, customize org config, roll out
 PROGRESS.md             Learner progress (created by setup, gitignored)
 manifest.json           Ordered module list with time estimates
-setup.js                One-time scaffolding (copies templates, creates PROGRESS.md)
+setup.js                One-time scaffolding that copies templates and creates PROGRESS.md
 modules/                15 lesson files
-exercises/              Exercise prompts + helper-tool template
-org/                    Org config (fill in before rollout) + *.template.* reference files
+exercises/              Exercise prompts and helper-tool template
+org/                    Org config files (fill in before rollout) and *.template.* reference files
 docs/                   Backlog and implementation notes
-archive/cli/            Prior Node.js CLI architecture (preserved for reference)
+archive/cli/            Prior Node.js CLI architecture, preserved for reference
 ```
 
 ---
@@ -182,10 +180,10 @@ archive/cli/            Prior Node.js CLI architecture (preserved for reference)
 ## Security
 
 - No telemetry, no install hooks, no external network calls
-- Local-only learner state — `PROGRESS.md` never leaves the machine
+- Learner state is local only. PROGRESS.md never leaves the machine.
 - Read-only-first patterns throughout the curriculum and exercises
 
-See [SECURITY.md](SECURITY.md) and [THREAT_MODEL.md](THREAT_MODEL.md) for full details.
+See [SECURITY.md](SECURITY.md) and [THREAT_MODEL.md](THREAT_MODEL.md) for details.
 
 ---
 
