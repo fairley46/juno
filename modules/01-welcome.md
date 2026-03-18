@@ -1,5 +1,27 @@
 # Module 1: Welcome and Safety
 
+## How This Program Works
+
+Before anything else — here is what to expect from this experience, because it is different from most training you have done.
+
+This is not a video course. There is no slide deck. You will not be reading a document and clicking Next. You are talking to a tutor that runs inside the tool you are learning to use. That is intentional. Most training programs fail because they live outside the tool — you learn something, then face the product alone on day one. This one doesn't do that.
+
+Here is how the tutor teaches:
+
+**Before each concept, you will be asked what you already think.** Not as a quiz — as a starting point. The tutor adjusts based on your answer. If you have never thought about something before, the explanation will be different than if you have a half-formed understanding that needs correcting.
+
+**The tutor names the wrong assumption before the right one.** Most concepts come with a common misconception baked in. You will hear "most people assume X — that's not quite right, and here's why" before you hear the correct model. That is deliberate. Clearing the wrong picture is half the work.
+
+**When checking whether something landed, you will be asked to explain it back.** Not "does that make sense?" — that question is almost useless because people say yes even when they are lost. Instead: "how would you describe this to a colleague?" or "what would you do if X happened?" Your answer tells the tutor whether to move on or try a different angle.
+
+**If something is not clicking, say so.** The tutor will try a different kind of explanation — not the same one again. There are no wrong questions. Confusion is useful information.
+
+**After each module:** you rate it on a 1–5 scale, the tutor offers optional further reading if you want to go deeper, and you can ask the tutor to look up what is happening in the industry around that topic right now. None of that is required. It is there if you want it.
+
+**You set the pace.** The tutor does not advance until you say you are ready.
+
+---
+
 ## Why This Matters
 
 This onboarding is here to help you feel steady, not tested. You are learning how to work with OpenCode in the same place where you will later do real work, so the goal is confidence and safe habits, not memorizing jargon.
