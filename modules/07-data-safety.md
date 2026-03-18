@@ -16,20 +16,14 @@ The risk is specific: when you send a prompt to a consumer AI service, your inpu
 
 This is the core habit. Before pasting anything into an AI tool — approved or not — ask: is this something that would be a problem if it appeared in a breach?
 
-**Never paste these into any AI prompt without explicit policy guidance:**
-
-- Client names, client data, or any personally identifiable information (PII)
-- Unreleased financial figures, forecasts, or internal performance data
-- Credentials, passwords, API keys, or authentication tokens
-- Legal documents under privilege or subject to confidentiality
-- M&A information, strategic plans, or anything under NDA
-- Anything marked Confidential, Restricted, or Internal Only in your org's data classification
-
-**These are generally safe to use with the approved tool:**
-- Public documents, published policies, openly available reference material
-- Your own draft work that doesn't contain the above
-- Anonymized or aggregated data where the source sensitivity is removed
-- Internal documents that don't contain the restricted categories above (check your org's policy)
+| Never paste (without explicit policy guidance) | Generally safe with the approved tool |
+|------------------------------------------------|---------------------------------------|
+| Client names, client data, PII | Public documents and published policies |
+| Unreleased financial figures or forecasts | Your own draft work (no sensitive data) |
+| Credentials, passwords, API keys, tokens | Anonymized or aggregated data |
+| Legal documents under privilege or confidentiality | Openly available reference material |
+| M&A information, strategic plans, anything under NDA | Internal docs with no restricted content (check policy) |
+| Anything marked Confidential, Restricted, or Internal Only | |
 
 ## The Approved Tool Difference
 

@@ -24,6 +24,18 @@ Before acting on any AI output, ask:
 
 High verification effort is appropriate when *checkability is low* or *cost of being wrong is high*. For everything else, a quick spot-check is usually enough.
 
+```text
+                    COST OF BEING WRONG
+                    Low              High
+                 ┌─────────────────┬─────────────────┐
+            High │  Quick          │  Spot-check     │
+CHECKABILITY     │  scan only      │  key claims     │
+                 ├─────────────────┼─────────────────┤
+            Low  │  Spot-check     │  Full review    │
+                 │  before sharing │  required       │
+                 └─────────────────┴─────────────────┘
+```
+
 ## What Hallucination Actually Looks Like
 
 Hallucination is when an AI generates plausible-sounding content that isn't true. It appears in a few characteristic patterns:
