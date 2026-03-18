@@ -80,8 +80,9 @@ Each module file contains the lesson content. Read it, then present it conversat
 12. **Transition to exercise** — say "That's the module. Ready to try the exercise?" Wait for confirmation.
 13. **Run the exercise** — see exercise protocol below. Do not skip.
 14. **Ask for a rating** — after the exercise, ask: "On a scale of 1 to 5, how clear was that module? 1 = confused, 5 = totally got it."
-15. **Mark complete** — update PROGRESS.md after the rating.
-16. **Ask before advancing** — say "Ready to move on to Module X?" Wait for explicit yes.
+15. **Offer further reading** — after the rating, check `manifest.json` for the current module's `further_reading` entries. If any exist, say: "I have [N] link(s) if you want to go deeper on this — want me to share them?" Present each as a title, URL, and one sentence on why it's worth reading. This is optional — the learner can skip it.
+16. **Mark complete** — update PROGRESS.md after the rating (and after further reading if they took it).
+17. **Ask before advancing** — say "Ready to move on to Module X?" Wait for explicit yes.
 
 ---
 

@@ -3,20 +3,142 @@
   "version": "0.3.0",
   "title": "OpenCode Enterprise Onboarding",
   "modules": [
-    { "id": "01-welcome", "title": "Welcome and Safety", "file": "modules/01-welcome.md", "estimatedMinutes": 8 },
-    { "id": "02-what-ai-is-doing", "title": "What AI Is Doing Here", "file": "modules/02-what-ai-is-doing.md", "estimatedMinutes": 8 },
-    { "id": "03-when-to-trust-ai-output", "title": "When to Trust AI Output", "file": "modules/03-when-to-trust-ai-output.md", "estimatedMinutes": 10 },
-    { "id": "04-agent-vs-assistant", "title": "Agent vs Assistant", "file": "modules/04-agent-vs-assistant.md", "estimatedMinutes": 8 },
-    { "id": "05-opencode-modes", "title": "OpenCode Modes: Plan, Edit, and Agent", "file": "modules/05-opencode-modes.md", "estimatedMinutes": 10 },
-    { "id": "06-local-vs-web", "title": "Local vs Web Execution", "file": "modules/06-local-vs-web.md", "estimatedMinutes": 8 },
-    { "id": "07-data-safety", "title": "Data Safety and Shadow AI", "file": "modules/07-data-safety.md", "estimatedMinutes": 10 },
-    { "id": "08-guard-rails", "title": "Guard Rails and Permissions", "file": "modules/08-guard-rails.md", "estimatedMinutes": 10 },
-    { "id": "09-mcp-basics", "title": "What MCP Is and Why It Matters", "file": "modules/09-mcp-basics.md", "estimatedMinutes": 10 },
-    { "id": "10-markdown-guidance", "title": "Using Markdown to Shape Behavior", "file": "modules/10-markdown-guidance.md", "estimatedMinutes": 10 },
-    { "id": "11-multi-tool-questions", "title": "Asking Questions Across Tools", "file": "modules/11-multi-tool-questions.md", "estimatedMinutes": 10 },
-    { "id": "12-build-a-tiny-tool", "title": "Build a Tiny Helper Tool", "file": "modules/12-build-a-tiny-tool.md", "estimatedMinutes": 15 },
-    { "id": "13-tokens", "title": "Tokens and Practical Limits", "file": "modules/13-tokens.md", "estimatedMinutes": 8 },
-    { "id": "14-first-wins", "title": "First Useful Workflows", "file": "modules/14-first-wins.md", "estimatedMinutes": 15 },
-    { "id": "15-next-steps", "title": "Troubleshooting and Next Steps", "file": "modules/15-next-steps.md", "estimatedMinutes": 8 }
+    {
+      "id": "01-welcome",
+      "title": "Welcome and Safety",
+      "file": "modules/01-welcome.md",
+      "estimatedMinutes": 8,
+      "further_reading": [
+        { "title": "Anthropic's Responsible Scaling Policy", "url": "https://www.anthropic.com/responsible-scaling-policy", "description": "Anthropic's own framework for thinking about AI safety and risk — useful context for why safety habits matter at every level." }
+      ]
+    },
+    {
+      "id": "02-what-ai-is-doing",
+      "title": "What AI Is Doing Here",
+      "file": "modules/02-what-ai-is-doing.md",
+      "estimatedMinutes": 8,
+      "further_reading": [
+        { "title": "How Large Language Models Work", "url": "https://www.anthropic.com/research", "description": "Anthropic's research page — if you want to go deeper on the mechanics of how these models reason and where their limits come from." }
+      ]
+    },
+    {
+      "id": "03-when-to-trust-ai-output",
+      "title": "When to Trust AI Output",
+      "file": "modules/03-when-to-trust-ai-output.md",
+      "estimatedMinutes": 10,
+      "further_reading": [
+        { "title": "Anthropic Model Card", "url": "https://www.anthropic.com/model-card", "description": "Claude's official model card — includes known limitations, failure modes, and evaluation results. Good reference for the trust calibration framework we covered." }
+      ]
+    },
+    {
+      "id": "04-agent-vs-assistant",
+      "title": "Agent vs Assistant",
+      "file": "modules/04-agent-vs-assistant.md",
+      "estimatedMinutes": 8,
+      "further_reading": [
+        { "title": "Building Effective Agents", "url": "https://www.anthropic.com/research/building-effective-agents", "description": "Anthropic's guide to agentic systems — written for builders but the first half is excellent context on what makes agents different from assistants and when each is appropriate." }
+      ]
+    },
+    {
+      "id": "05-opencode-modes",
+      "title": "OpenCode Modes: Plan, Edit, and Agent",
+      "file": "modules/05-opencode-modes.md",
+      "estimatedMinutes": 10,
+      "further_reading": [
+        { "title": "OpenCode Documentation", "url": "https://opencode.ai/docs", "description": "Official OpenCode docs — the modes section covers plan, edit, and agent in detail with current screenshots. Worth bookmarking as your primary reference." }
+      ]
+    },
+    {
+      "id": "06-local-vs-web",
+      "title": "Local vs Web Execution",
+      "file": "modules/06-local-vs-web.md",
+      "estimatedMinutes": 8,
+      "further_reading": [
+        { "title": "Anthropic Privacy Policy", "url": "https://www.anthropic.com/privacy", "description": "What Anthropic does and doesn't do with data sent through their API — useful to read alongside your org's data handling policy." }
+      ]
+    },
+    {
+      "id": "07-data-safety",
+      "title": "Data Safety and Shadow AI",
+      "file": "modules/07-data-safety.md",
+      "estimatedMinutes": 10,
+      "further_reading": [
+        { "title": "OWASP Top 10 for LLM Applications", "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/", "description": "The security community's canonical list of risks specific to LLM-based tools — prompt injection, data leakage, and more. Good background for understanding why the data safety habits matter." }
+      ]
+    },
+    {
+      "id": "08-guard-rails",
+      "title": "Guard Rails and Permissions",
+      "file": "modules/08-guard-rails.md",
+      "estimatedMinutes": 10,
+      "further_reading": [
+        { "title": "Principle of Least Privilege", "url": "https://csrc.nist.gov/glossary/term/least_privilege", "description": "NIST's definition and rationale — the same principle that governs system security applies directly to AI tool permissions." }
+      ]
+    },
+    {
+      "id": "09-mcp-basics",
+      "title": "What MCP Is and Why It Matters",
+      "file": "modules/09-mcp-basics.md",
+      "estimatedMinutes": 10,
+      "further_reading": [
+        { "title": "Model Context Protocol — Introduction", "url": "https://modelcontextprotocol.io/introduction", "description": "The official MCP site — explains the protocol, why it was created, and how servers are structured. The registry lists all publicly available MCP servers." },
+        { "title": "MCP Server Registry", "url": "https://modelcontextprotocol.io/servers", "description": "Browse available MCP connectors — useful for seeing what tools your org could potentially connect." }
+      ]
+    },
+    {
+      "id": "10-markdown-guidance",
+      "title": "Using Markdown to Shape Behavior",
+      "file": "modules/10-markdown-guidance.md",
+      "estimatedMinutes": 10,
+      "further_reading": [
+        { "title": "Anthropic Prompt Engineering Guide", "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview", "description": "Anthropic's guide to writing effective prompts and context files — directly applicable to the guidance file patterns we covered." }
+      ]
+    },
+    {
+      "id": "11-multi-tool-questions",
+      "title": "Asking Questions Across Tools",
+      "file": "modules/11-multi-tool-questions.md",
+      "estimatedMinutes": 10,
+      "further_reading": [
+        { "title": "Anthropic Docs: Tool Use", "url": "https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview", "description": "How Claude handles multiple tools in context — useful background if you want to understand why source attribution and conflict resolution work the way they do." }
+      ]
+    },
+    {
+      "id": "12-build-a-tiny-tool",
+      "title": "Build a Tiny Helper Tool",
+      "file": "modules/12-build-a-tiny-tool.md",
+      "estimatedMinutes": 15,
+      "further_reading": [
+        { "title": "OpenCode Extensions Documentation", "url": "https://opencode.ai/docs/extensions", "description": "How to package and share tools built for OpenCode — next step after building your first helper." }
+      ]
+    },
+    {
+      "id": "13-tokens",
+      "title": "Tokens and Practical Limits",
+      "file": "modules/13-tokens.md",
+      "estimatedMinutes": 8,
+      "further_reading": [
+        { "title": "Anthropic Token Counter Tool", "url": "https://docs.anthropic.com/en/docs/build-with-claude/token-counting", "description": "How to count tokens programmatically — useful if you want to build prompts that reliably stay within budget." }
+      ]
+    },
+    {
+      "id": "14-first-wins",
+      "title": "First Useful Workflows",
+      "file": "modules/14-first-wins.md",
+      "estimatedMinutes": 15,
+      "further_reading": [
+        { "title": "Anthropic Cookbook", "url": "https://github.com/anthropics/anthropic-cookbook", "description": "A collection of practical prompt patterns and workflow templates — good starting point for adapting the frameworks from this module to your own work." }
+      ]
+    },
+    {
+      "id": "15-next-steps",
+      "title": "Troubleshooting and Next Steps",
+      "file": "modules/15-next-steps.md",
+      "estimatedMinutes": 8,
+      "further_reading": [
+        { "title": "OpenCode Community", "url": "https://opencode.ai/community", "description": "Where to ask questions, share what you've built, and find others solving similar problems." },
+        { "title": "Anthropic Status Page", "url": "https://status.anthropic.com", "description": "If something stops working unexpectedly — check here first before troubleshooting locally." }
+      ]
+    }
   ]
 }
