@@ -71,18 +71,21 @@ One markdown file + one line in `manifest.json`. No code changes. See [CUSTOMIZA
 
 | # | Module | Focus |
 |---|--------|-------|
-| 1 | Welcome and Safety | What this program is; human accountability |
+| 1 | Welcome and Safety | What this program is; job security framing; human accountability |
 | 2 | What AI Is Doing Here | Plain-language model of how OpenCode works |
-| 3 | Agent vs Assistant | The difference; why it matters for trust |
-| 4 | Local vs Web Execution | What runs where; what leaves the machine |
-| 5 | Guard Rails and Permissions | Least privilege; review habits |
-| 6 | What MCP Is and Why It Matters | Connectors; how to add one; what to check |
-| 7 | Using Markdown to Shape Behavior | Guidance files; AGENTS.md; real template |
-| 8 | Asking Questions Across Tools | Getting useful answers from multiple sources |
-| 9 | Build a Tiny Helper Tool | Hands-on: read-only policy search in ~70 lines |
-| 10 | Tokens and Practical Limits | ~300 tokens/page; practical sizing heuristics |
-| 11 | First Useful Workflows | Concrete workflows learners can use immediately |
-| 12 | Troubleshooting and Next Steps | When things go wrong; where to go next |
+| 3 | When to Trust AI Output | Trust calibration; hallucination patterns; verification habits |
+| 4 | Agent vs Assistant | The difference; why it matters for trust |
+| 5 | OpenCode Modes: Plan, Edit, and Agent | What each mode allows; how to choose; control awareness |
+| 6 | Local vs Web Execution | What runs where; what leaves the machine |
+| 7 | Data Safety and Shadow AI | What never goes in a prompt; why the approved tool matters |
+| 8 | Guard Rails and Permissions | Least privilege; review habits |
+| 9 | What MCP Is and Why It Matters | Connectors; how to add one; what to check |
+| 10 | Using Markdown to Shape Behavior | Guidance files; AGENTS.md; real template |
+| 11 | Asking Questions Across Tools | Getting useful answers from multiple sources |
+| 12 | Build a Tiny Helper Tool | Hands-on: read-only policy search in ~70 lines |
+| 13 | Tokens and Practical Limits | ~300 tokens/page; practical sizing heuristics |
+| 14 | First Useful Workflows | Three concrete prompt templates to use tomorrow |
+| 15 | Troubleshooting and Next Steps | When things go wrong; where to go next |
 
 ---
 
@@ -106,7 +109,7 @@ CUSTOMIZATION.md        How to add modules, customize org config, roll out
 PROGRESS.md             Learner progress (created by setup, gitignored)
 manifest.json           Ordered module list with time estimates
 setup.js                One-time scaffolding (copies templates, creates PROGRESS.md)
-modules/                12 lesson files
+modules/                15 lesson files
 exercises/              Exercise prompts + templates/helper-tool example
 org/                    Org config files + templates (fill in before rollout)
 docs/                   Implementation notes and open backlog
