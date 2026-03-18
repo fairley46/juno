@@ -1,4 +1,4 @@
-# Module 6: What MCP Is and Why It Matters
+# Module 9: What MCP Is and Why It Matters
 
 ## Why This Matters
 

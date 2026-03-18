@@ -1,4 +1,4 @@
-# Module 12: Troubleshooting and Next Steps
+# Module 15: Troubleshooting and Next Steps
 
 ## Why This Matters
 

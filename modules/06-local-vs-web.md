@@ -1,4 +1,4 @@
-# Module 4: Local vs Web Execution
+# Module 6: Local vs Web Execution
 
 ## Why This Matters
 

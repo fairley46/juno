@@ -1,4 +1,4 @@
-# Module 3: Agent vs Assistant
+# Module 4: Agent vs Assistant
 
 ## Why This Matters
 

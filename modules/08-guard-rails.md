@@ -1,4 +1,4 @@
-# Module 5: Guard Rails and Permissions
+# Module 8: Guard Rails and Permissions
 
 ## Why This Matters
 

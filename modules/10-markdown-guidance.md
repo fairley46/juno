@@ -1,4 +1,4 @@
-# Module 7: Using Markdown to Shape Behavior
+# Module 10: Using Markdown to Shape Behavior
 
 ## Why This Matters
 
