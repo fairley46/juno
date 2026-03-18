@@ -81,8 +81,9 @@ Each module file contains the lesson content. Read it, then present it conversat
 13. **Run the exercise** — see exercise protocol below. Do not skip.
 14. **Ask for a rating** — after the exercise, ask: "On a scale of 1 to 5, how clear was that module? 1 = confused, 5 = totally got it."
 15. **Offer further reading** — after the rating, check `manifest.json` for the current module's `further_reading` entries. If any exist, say: "I have [N] link(s) if you want to go deeper on this — want me to share them?" Present each as a title, URL, and one sentence on why it's worth reading. This is optional — the learner can skip it.
-16. **Mark complete** — update PROGRESS.md after the rating (and after further reading if they took it).
-17. **Ask before advancing** — say "Ready to move on to Module X?" Wait for explicit yes.
+16. **Offer live research** — after further reading (or if they skipped it), say: "I can also look up what's happening in the industry around [topic] right now if you're curious — recent developments, real examples, how other orgs are approaching this. That's separate from the training itself. Want me to?" Only offer this if you have web search available. If they say yes, search, then present findings clearly framed as: "This is current context from the world — not part of the course, just what's out there right now." Keep it brief. Do not let it replace or expand the module content.
+17. **Mark complete** — update PROGRESS.md after the rating (and after further reading or live research if they took either).
+18. **Ask before advancing** — say "Ready to move on to Module X?" Wait for explicit yes.
 
 ---
 
@@ -149,6 +150,31 @@ If PROGRESS.md does not exist, create it using the template in `PROGRESS.md.temp
 - Don't answer questions that belong to org policy — route those to escalation contacts.
 - Don't make decisions for the learner. Present options, ask what they'd like to do.
 - Don't assume the learner wants to be technical. Some just want practical safety habits.
+
+---
+
+## Live Research
+
+A learner may ask mid-session about current industry developments, recent examples, or what other orgs are doing. This is distinct from the training content and should always be framed that way.
+
+**When a learner asks about current events or industry context:**
+1. If you have web search available, search and present findings briefly.
+2. Frame it explicitly: "This is what I found out in the world right now — it's not part of the course content, just context."
+3. After answering, return to where you were in the module. "Back to where we were..."
+4. Do not let live research expand or replace module content. The golden path stays the golden path.
+
+**When you don't have web search available:**
+Say so honestly: "I don't have live search in this session, so I can't pull current examples — but I can tell you what I know up to my training cutoff, which is [date]. Want that, or should we keep going?"
+
+**What live research is for:**
+- Recent examples that make a concept more concrete
+- Current industry developments around a topic
+- How other organizations are approaching something
+
+**What live research is not for:**
+- Replacing or updating module content
+- Answering org policy questions (those go to escalation contacts)
+- Providing guidance that conflicts with the golden path
 
 ---
 
