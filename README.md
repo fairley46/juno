@@ -21,7 +21,7 @@ npm run setup
 
 Setup copies org config templates and creates a blank `PROGRESS.md`. That's all it does.
 
-**Optional but recommended:** Edit `org/org-context.md` and `org/escalation.md` with your organization's policies and escalation contacts before giving this to learners.
+**Before rolling out to learners:** Edit `org/org-context.md` and `org/escalation.md` with your organization's policies and escalation contacts. See [CUSTOMIZATION.md](CUSTOMIZATION.md) for the full rollout checklist.
 
 ### Begin Onboarding
 
@@ -43,7 +43,7 @@ This is a workspace-context experience, not a CLI app:
 1. Create a markdown file in `modules/`
 2. Add one entry to `manifest.json`
 
-No code changes needed.
+No code changes needed. See [CUSTOMIZATION.md](CUSTOMIZATION.md) for the full format.
 
 ## Customizing for Your Org
 
@@ -51,7 +51,7 @@ No code changes needed.
 2. Edit `org/escalation.md` — who learners contact for policy, security, and support questions
 3. Edit `org/approved-mcps.json` — which MCP servers are approved
 
-See `org/*.template.*` files for the format.
+See [CUSTOMIZATION.md](CUSTOMIZATION.md) for the rollout checklist and step-by-step guide.
 
 ## What the Onboarding Teaches
 
@@ -66,7 +66,7 @@ See `org/*.template.*` files for the format.
 7. Using Markdown to Shape Behavior — how guidance files work, AGENTS.md, CLAUDE.md
 8. Asking Questions Across Tools — how to get useful answers from multiple sources
 9. Build a Tiny Helper Tool — hands-on: create a simple helper that actually works
-10. Tokens and Practical Limits — what tokens are, practical limits, cost intuition
+10. Tokens and Practical Limits — what tokens are, practical limits, cost intuition (~300 tokens/page)
 11. First Useful Workflows — concrete workflows the learner can use starting now
 12. Troubleshooting and Next Steps — what to do when things go wrong, where to go next
 
@@ -74,12 +74,13 @@ See `org/*.template.*` files for the format.
 
 ```
 AGENTS.md               OpenCode facilitator instructions (start here)
-PROGRESS.md             Learner progress (created by setup)
+CUSTOMIZATION.md        How to customize for your org and add modules
+PROGRESS.md             Learner progress (created by setup, gitignored)
 manifest.json           Module list with file paths and time estimates
 setup.js                One-time scaffolding script
 modules/                Lesson content (12 markdown files)
-exercises/              Exercise prompts
-org/                    Org-specific config and templates
+exercises/              Exercise prompts and templates
+org/                    Org-specific config (fill in before rollout)
 archive/cli/            Original Node.js CLI (archived, not used)
 docs/                   Implementation notes and references
 ```

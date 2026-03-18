@@ -156,7 +156,7 @@ test("answerQuestion redirects internal policy questions to org guidance", () =>
     initializeProgress(cwd, manifest);
     const answer = answerQuestion(cwd, manifest, "What is our internal policy for approved use?");
     assert.match(answer, /internal business, policy, or approval question/i);
-    assert.match(answer, /Placeholder contact needed/);
+    assert.match(answer, /Escalation Contacts/i);
   });
 });
 

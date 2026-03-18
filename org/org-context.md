@@ -1,23 +1,33 @@
-# PH Organization Context
+# Organization Context
 
-This is placeholder organization guidance for local testing.
+**This file needs to be filled in before rolling out the onboarding program to learners.**
+
+Copy the sections from `org-context.template.md` as a starting point. The AI facilitator reads this file at the start of every session and uses it to personalize approved use, disallowed use, and governance guidance.
+
+Until this file is filled in, the facilitator will note to learners that org-specific guidance is not yet configured and will use generic defaults.
+
+---
 
 ## Approved Use
 
-- Learn how to use OpenCode safely for low-risk work.
-- Practice asking questions, reviewing files, and using approved read-only tools.
+_Replace this section with your organization's approved use cases._
+
+See `org-context.template.md` for the format and examples.
 
 ## Disallowed Use
 
-- Do not use this stub as real company policy.
-- Do not treat generated content as final approval for business, legal, security, or production decisions.
+_Replace this section with your organization's restrictions._
+
+See `org-context.template.md` for the format and examples.
 
 ## Internal Escalation
 
-- Placeholder: contact your AI onboarding lead or manager for internal business questions.
+_Replace this section with your real escalation contacts._
+
+See `org/escalation.md` for full escalation path details.
 
 ## Internal Guidance Notes
 
-- The facilitator can explain AI concepts and onboarding steps.
-- Internal policy and enterprise-specific decisions should come from your actual org guidance once it is filled in.
+_Replace this section with your org-specific governance, data sensitivity, and approval requirements._
 
+See `org-context.template.md` for the format and examples.
