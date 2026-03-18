@@ -1,83 +1,167 @@
 # OpenCode Onboarding
 
-`@ph/opencode-onboarding` is a starter package for a guided, installable onboarding experience that runs inside OpenCode in the desktop app or terminal.
+Guided, installable onboarding for learning how to use OpenCode safely inside OpenCode.
 
-## What This Scaffold Covers
+This project is designed for non-technical and technical-adjacent learners who may be new to AI, unsure how agents work, or nervous about using AI in an enterprise setting. The goal is to teach safe, practical use in the same place where the work will actually happen: OpenCode desktop or the terminal.
 
-- installable package structure for a future `/onboarding` entrypoint
-- local-only learner state and feedback storage
-- module manifest and content layout
-- facilitator instructions and warm error copy
-- org overlay templates for approved MCPs and internal guidance
-- security, threat model, and testing documentation
-- a small CLI scaffold for local state, feedback capture, and export flows
+## What This Is
 
-## Current Status
+This repository is a testable onboarding runtime for OpenCode with:
 
-This is now a testable facilitator runtime scaffold. It provides:
+- a facilitator-led learning flow
+- modular lessons with enterprise guard rails
+- interactive exercises for early modules
+- local-only learner state, ratings, and feedback
+- manual feedback export for survey workflows
+- redacted diagnostics export for break/fix support
+- org-level placeholders for MCPs, escalation paths, and internal guidance
 
-- a manifest for the onboarding journey
-- markdown modules and exercises
-- a local state model under `~/.opencode/onboarding/<workspace-id>/`
-- a safe workspace fallback under `.opencode-local/onboarding/` if the home directory is not writable
-- feedback capture and export helpers
-- diagnostics export scaffold
-- an interactive facilitator loop for desktop or terminal testing
+## Why This Approach
 
-## Local Commands
+Most AI onboarding is either too technical, too abstract, or too hype-heavy. This project is built around a different idea:
+
+- teach in the same environment where the learner will work
+- explain the mental model before configuration
+- make governance part of the product, not a separate appendix
+- keep the human in the loop
+- help beginners practice, not just read
+
+## Current Experience
+
+The current version includes:
+
+- a guided facilitator loop you can run locally
+- lesson modules covering AI basics, agents, local vs web, MCP, markdown guidance, tokens, guard rails, and first workflows
+- interactive exercises for the first three modules
+- side-question handling with return-to-lesson guidance
+- org-aware stubs for internal policy boundaries
+
+## Quick Start
+
+### Requirements
+
+- Node.js 20+
+
+### Run The Onboarding
 
 ```bash
+git clone https://github.com/fairley46/opencode-onboarding.git
+cd opencode-onboarding
 npm run onboarding
-node ./src/cli.js start
-node ./src/cli.js resume
-node ./src/cli.js show
-node ./src/cli.js complete
-node ./src/cli.js next
-node ./src/cli.js prev
-node ./src/cli.js status
-node ./src/cli.js feedback "The explanation felt clear."
-node ./src/cli.js rate 5
-node ./src/cli.js export-feedback
-node ./src/cli.js export-diagnostics
-node ./src/cli.js restart
+```
+
+### Run Tests
+
+```bash
 npm test
 ```
 
-## Planned OpenCode Experience
+## What Testing Looks Like
 
-- `/onboarding` starts or resumes the journey
-- `/onboarding status` shows progress
-- `/onboarding restart` restarts onboarding
-- `/feedback` captures local feedback and offers an export block for survey submission
-- `/onboarding export-diagnostics` creates a redacted bundle for break/fix support
+Inside the interactive session, you can:
 
-## Files To Customize Later
+- move through modules
+- start an interactive exercise with `exercise`
+- ask plain-language questions
+- leave feedback with `feedback`
+- export survey-ready feedback with `export-feedback`
+- export a redacted diagnostics bundle with `export-diagnostics`
 
-- [org/org-context.template.md](/Users/bradfairley/Documents/Playground/opencode-onboarding/org/org-context.template.md)
-- [org/approved-mcps.template.json](/Users/bradfairley/Documents/Playground/opencode-onboarding/org/approved-mcps.template.json)
-- [org/escalation.template.md](/Users/bradfairley/Documents/Playground/opencode-onboarding/org/escalation.template.md)
-- [manifest.json](/Users/bradfairley/Documents/Playground/opencode-onboarding/manifest.json)
-- [CUSTOMIZATION_BACKLOG.md](/Users/bradfairley/Documents/Playground/opencode-onboarding/docs/CUSTOMIZATION_BACKLOG.md)
-- [DESKTOP_TEST_RUNBOOK.md](/Users/bradfairley/Documents/Playground/opencode-onboarding/docs/DESKTOP_TEST_RUNBOOK.md)
-- [INDUSTRY_REFERENCES.md](/Users/bradfairley/Documents/Playground/opencode-onboarding/docs/INDUSTRY_REFERENCES.md)
+A good first test path is:
 
-## Stub Org Data Included
-
-For desktop testing, the package now includes placeholder org files that the runtime can load:
-
-- [org-context.md](/Users/bradfairley/Documents/Playground/opencode-onboarding/org/org-context.md)
-- [approved-mcps.json](/Users/bradfairley/Documents/Playground/opencode-onboarding/org/approved-mcps.json)
-- [escalation.md](/Users/bradfairley/Documents/Playground/opencode-onboarding/org/escalation.md)
-
-These are intentionally safe placeholders and should be replaced before real rollout.
-
-## Next Step For OpenCode Desktop
-
-To test the package in OpenCode desktop next, open this workspace and start the interactive facilitator:
-
-```bash
-cd /Users/bradfairley/Documents/Playground/opencode-onboarding
-npm run onboarding
+```text
+restart
+show
+exercise
+I want to feel more confident using this safely.
+done
+Both, but the human still decides.
+complete
+rate 5
+feedback
+This felt easy to follow.
+export-feedback
+next
+What is MCP?
+quit
 ```
 
-This is the quickest way to validate the flow, tone, local state behavior, and question-handling loop before wiring the real `/onboarding` entrypoint.
+## What The Onboarding Teaches
+
+- what AI is doing in OpenCode
+- the difference between an assistant and an agent
+- local versus web execution
+- what MCP is and why it matters
+- how markdown shapes behavior and context
+- how to ask questions across approved tools and sources
+- how to think about tokens in practical terms
+- how permissions, review, and least privilege work in practice
+
+## Project Structure
+
+```text
+docs/           implementation notes, testing, customization, references
+modules/        lesson content
+exercises/      exercise definitions and prompts
+facilitator/    tone, interaction rules, and warm error copy
+org/            org-specific stubs and templates
+src/            runtime and facilitator logic
+test/           automated tests
+```
+
+## Enterprise Customization
+
+The repo ships with PH placeholder data so the onboarding can be tested safely right away. Before real rollout, you should replace the stub org files with your actual enterprise guidance:
+
+- `org/org-context.md`
+- `org/approved-mcps.json`
+- `org/escalation.md`
+
+The running checklist of required inputs is in [CUSTOMIZATION_BACKLOG.md](docs/CUSTOMIZATION_BACKLOG.md).
+
+## Security Posture
+
+This project is intentionally safe by default:
+
+- no hidden telemetry
+- no install hooks
+- local-only learner state by default
+- read-only-first training patterns
+- manual feedback export
+- redacted diagnostics export
+
+See:
+
+- [SECURITY.md](SECURITY.md)
+- [THREAT_MODEL.md](THREAT_MODEL.md)
+- [SAFE_DEFAULTS.md](SAFE_DEFAULTS.md)
+
+## Industry Grounding
+
+The teaching approach is being shaped by external guidance from:
+
+- Anthropic on effective agent design
+- the official Model Context Protocol docs
+- OpenAI prompt guidance
+- GitHub Copilot model guidance
+- NIST AI RMF
+- OWASP guidance for LLM applications
+
+References are tracked in [INDUSTRY_REFERENCES.md](docs/INDUSTRY_REFERENCES.md).
+
+## Useful Docs
+
+- [DESKTOP_TEST_RUNBOOK.md](docs/DESKTOP_TEST_RUNBOOK.md)
+- [IMPLEMENTATION_SPEC.md](docs/IMPLEMENTATION_SPEC.md)
+- [TEST_STRATEGY.md](docs/TEST_STRATEGY.md)
+- [CUSTOMIZATION_BACKLOG.md](docs/CUSTOMIZATION_BACKLOG.md)
+
+## Current Status
+
+This is an actively evolving v0.1 scaffold. The strongest next improvements are:
+
+- more interactive exercises across the full curriculum
+- more polished presentation inside the facilitator flow
+- better OpenCode-native entrypoint wiring for the eventual `/onboarding` experience
+- richer org overlays and real MCP-backed practice paths
+
