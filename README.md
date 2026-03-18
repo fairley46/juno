@@ -1,8 +1,10 @@
 # OpenCode Onboarding
 
-An AI-facilitated onboarding program for teams adopting OpenCode. Designed for non-technical and technical-adjacent learners who need practical habits, not a lecture.
+**AI-facilitated onboarding for enterprise teams adopting OpenCode.**
 
-The experience runs entirely inside OpenCode — no separate app, no browser, no slides. You open a folder, the AI greets you, and you go through 12 short modules together at your pace.
+Most AI onboarding fails because it lives outside the tool — a separate course, a PDF, a slide deck. Learners read it, forget it, and then face the actual product alone.
+
+This program runs entirely inside OpenCode. The AI itself is the facilitator. You open a folder, the AI greets you, and you go through 15 short modules together at your pace — learning by using the thing you're learning about.
 
 ---
 
@@ -53,7 +55,7 @@ Before giving this to learners, edit three files:
 | `org/escalation.md` | Who learners contact for policy, AI, and security questions |
 | `org/approved-mcps.json` | Which MCP servers learners are allowed to use |
 
-The `org/*.template.*` files show the expected format. The AI facilitator reads these at the start of every session.
+The `org/*.template.*` files show the expected format for each. The AI facilitator reads the live files at the start of every session.
 
 ### 2. Share the repo
 
@@ -67,7 +69,7 @@ One markdown file + one line in `manifest.json`. No code changes. See [CUSTOMIZA
 
 ## Curriculum
 
-12 modules, ~90 minutes total. Each has a short exercise.
+15 modules, ~2 hours total. Each has a short exercise.
 
 | # | Module | Focus |
 |---|--------|-------|
@@ -111,8 +113,9 @@ manifest.json           Ordered module list with time estimates
 setup.js                One-time scaffolding (copies templates, creates PROGRESS.md)
 modules/                15 lesson files
 exercises/              Exercise prompts + templates/helper-tool example
-org/                    Org config files + templates (fill in before rollout)
-docs/                   Implementation notes and open backlog
+org/                    Org config files (fill in before rollout) + *.template.* reference files
+docs/                   Backlog and implementation notes
+archive/cli/            Prior Node.js CLI architecture (preserved for reference)
 ```
 
 ---
@@ -124,3 +127,9 @@ docs/                   Implementation notes and open backlog
 - Read-only-first training patterns throughout
 
 See [SECURITY.md](SECURITY.md) and [THREAT_MODEL.md](THREAT_MODEL.md) for full details.
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
