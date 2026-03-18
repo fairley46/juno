@@ -1,38 +1,37 @@
-# Security Notes
-
-This onboarding package is designed to be safe by default.
+# Security
 
 ## Safe Defaults
 
-- no hidden network calls
-- no telemetry
-- no `postinstall` scripts
-- no secret collection
-- no automatic MCP enablement
-- no writes outside the local onboarding state without explicit user action
+This repo is designed to be safe by default:
+
+- No telemetry
+- No hidden network calls
+- No `postinstall` scripts
+- No secret collection
+- No automatic MCP enablement
+- No writes outside the learner's local machine
 
 ## Data Handling
 
-- learner progress, ratings, and feedback are stored locally on the learner's machine
-- survey submission is manual by copy and paste
-- diagnostics export is opt-in and should be redacted by default
-- exported feedback should contain learner comments and light module context only
+Learner progress is stored in `PROGRESS.md` on the learner's local machine. It is gitignored and never leaves the machine. No data is transmitted to any external service by this repo.
+
+Live research (when the tutor searches the web during a session) uses whatever web search capability the AI tool provides. That data path is governed by the AI tool's own privacy policy — not this repo.
 
 ## Sensitive Data Rules
 
-Do not store or export:
+Do not store in any file in this repo:
 
-- API keys
-- tokens
-- credentials
-- raw internal documents
-- full tool payloads
-- prompt transcripts unless explicitly approved later
+- API keys, tokens, or credentials
+- Real learner names or personal data beyond what the learner puts in PROGRESS.md
+- Internal org documents
+- Prompt transcripts
 
-## Release Requirements
+The `org/` config files are designed for policy descriptions, not sensitive data. Treat them accordingly.
 
-- keep dependencies minimal
-- pin versions when dependencies are introduced
-- run tests before publishing
-- review sample configs to ensure they are templates, not live credentials
+## Release Checklist
 
+Before tagging a release:
+
+- Review `org/*.template.*` files to ensure they contain no live credentials or real org data
+- Confirm `PROGRESS.md` is in `.gitignore`
+- Keep runtime dependencies minimal — `setup.js` should require no packages beyond Node.js built-ins
