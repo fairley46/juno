@@ -1,0 +1,12 @@
+{
+  "mcpServers": [
+    {
+      "id": "docs-server",
+      "label": "Approved Docs Server",
+      "status": "placeholder",
+      "access": "read-only",
+      "purpose": "Reference documentation and approved help content"
+    }
+  ]
+}
+

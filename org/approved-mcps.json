@@ -1,0 +1,12 @@
+{
+  "mcpServers": [
+    {
+      "id": "ph-docs-server",
+      "label": "PH Placeholder Docs Server",
+      "status": "stub",
+      "access": "read-only",
+      "purpose": "Demonstrate how an approved documentation MCP would appear in onboarding"
+    }
+  ]
+}
+
