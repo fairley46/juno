@@ -26,11 +26,14 @@ Focus on these three sections:
 
 ### Part 2: Try It
 
+**Keep this chat open.** For this part, open a new terminal window — or use the terminal pane in OpenCode Desktop if that's how you're running this. Run the commands there, then come back here and tell the facilitator what you saw.
+
 If you have Node.js installed:
 
 1. Create a `policies` folder inside `exercises/templates/helper-tool/`
 2. Add one or two `.md` files with a few lines of text (make something up — it's just for practice)
 3. Run: `node exercises/templates/helper-tool/policy-lookup.js "your search term"`
+4. Come back here and describe what the output looked like.
 
 If you don't have Node.js, the facilitator can walk through what the output would look like.
 

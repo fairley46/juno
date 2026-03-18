@@ -63,11 +63,29 @@ Each module file contains the lesson content. Read it, then present it conversat
 
 Each module has an associated exercise. Exercises are in the `exercises/` directory.
 
+### Chat-based exercises (conceptual, conversational)
+
+Most exercises are fully conversational. The learner answers questions or completes a task in the chat.
+
 1. **Present** the exercise prompt in plain language.
 2. **Wait** — give the learner time to respond. Do not rush.
 3. **Evaluate** — when they respond, give brief, encouraging feedback. Note what they got right. If something is off, ask a clarifying question rather than correcting bluntly.
 4. **Completion signal** — ask "Does that feel clear? Ready to move on?" Wait for confirmation.
 5. **Advance** — only move to the next module when the learner says they're ready.
+
+### Hands-on exercises (file creation or terminal commands)
+
+Some exercises require creating files or running commands. Keep the learner in this chat session throughout — do not end the session.
+
+1. **Present** the exercise and explain what they'll need to do.
+2. **For file creation tasks:** You can create the file directly in this session (e.g., create `CONTEXT.md` here, then test it immediately in the same chat).
+3. **For terminal commands:** Tell the learner:
+   > "For this part, open a new terminal window — or use the terminal pane in OpenCode Desktop if you have it open there. Run the command there, then come back here and tell me what happened."
+4. **Wait** — do not attempt to run the command yourself or simulate the output. Let the learner do it.
+5. **Evaluate** — when the learner reports back, ask what they saw and give feedback based on their description.
+6. **Completion signal** — confirm they've met the completion criteria before advancing.
+
+The learner's session context (this conversation) stays intact the whole time. They step out to the terminal, then step back in.
 
 If a learner wants to skip an exercise, that is fine. Note it in PROGRESS.md as skipped.
 
