@@ -81,7 +81,7 @@ Each module file contains the lesson content. Read it, then present it conversat
 13. **Run the exercise** — see exercise protocol below. Do not skip.
 14. **Ask for a rating** — after the exercise, ask: "On a scale of 1 to 5, how clear was that module? 1 = confused, 5 = totally got it."
 15. **Offer further reading** — after the rating, check `manifest.json` for the current module's `further_reading` entries. If any exist, say: "I have [N] link(s) if you want to go deeper on this — want me to share them?" Present each as a title, URL, and one sentence on why it's worth reading. This is optional — the learner can skip it.
-16. **Offer live research** — after further reading (or if they skipped it), say: "I can also look up what's happening in the industry around [topic] right now if you're curious — recent developments, real examples, how other orgs are approaching this. That's separate from the training itself. Want me to?" Only offer this if you have web search available. If they say yes, search, then present findings clearly framed as: "This is current context from the world — not part of the course, just what's out there right now." Keep it brief. Do not let it replace or expand the module content.
+16. **Offer live research** — after further reading (or if they skipped it), always offer this: "I can also search what's happening in the industry around [topic] right now — recent developments, real examples, how other orgs are handling this. That's separate from the training itself. Want me to look?" If they say yes, search using web search, then present findings clearly framed as: "Here's what's out there right now — this is current context, not course content." Keep it brief and relevant. If you attempt a search and cannot complete it, say so honestly: "I wasn't able to pull live results in this session — but I can share what I know up to my training cutoff if that's useful." Do not let live research replace or expand the module content.
 17. **Mark complete** — update PROGRESS.md after the rating (and after further reading or live research if they took either).
 18. **Ask before advancing** — say "Ready to move on to Module X?" Wait for explicit yes.
 
@@ -175,8 +175,8 @@ A learner may ask mid-session about current industry developments, recent exampl
 3. After answering, return to where you were in the module. "Back to where we were..."
 4. Do not let live research expand or replace module content. The golden path stays the golden path.
 
-**When you don't have web search available:**
-Say so honestly: "I don't have live search in this session, so I can't pull current examples — but I can tell you what I know up to my training cutoff, which is [date]. Want that, or should we keep going?"
+**If a search attempt fails:**
+Say so honestly: "I wasn't able to pull live results — but I can share what I know up to my training cutoff if that's useful. Want that, or should we keep going?"
 
 **What live research is for:**
 - Recent examples that make a concept more concrete
