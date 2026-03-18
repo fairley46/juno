@@ -1,8 +1,22 @@
 # OpenCode Onboarding
 
-AI-facilitated onboarding for enterprise teams adopting OpenCode.
+Most enterprise AI onboarding fails for the same reason: it lives outside the tool. Someone reads a course, watches a video, or sits through a workshop. Then on day one they open the actual product and face it alone. The course didn't teach them the tool — it taught them about the tool, in a different context, with different stakes.
 
-Most AI onboarding fails because it lives outside the tool. You read a course, forget it, and then face the actual product alone on day one. This program runs entirely inside OpenCode. The AI is the facilitator. You open a folder, the AI greets you, and you work through 15 short modules together at your own pace, learning by using the thing you're learning about.
+This program runs entirely inside OpenCode. The AI is the facilitator. You open a workspace folder, the AI greets you, and you work through 15 short modules together — learning how to use OpenCode by using it, with a tutor running inside the very thing you are learning.
+
+---
+
+## What Makes This Different
+
+This is not a chatbot that reads slides at you. The facilitator is designed to teach, not just present.
+
+Before introducing each concept, it asks what you already think. It names the wrong mental model before the right one — "Most people assume X; that's not quite right, and here's why" — because clearing the old picture is half the work. It finds analogies in your own work context instead of landing on generic examples. When it needs to check whether something landed, it asks you to explain it back or apply it to a real situation in your own work. It does not ask "does that make sense?"
+
+If your answers are short or uncertain, it slows down and tries a different approach — not the same explanation again, but a different one. It reads your engagement.
+
+Each module connects backward to the one before it. Each exercise has specific completion criteria; the facilitator does not advance until those are met. After each module, curated further reading is available if you want to go deeper — but it is clearly optional and kept separate from the training itself.
+
+Across your org, every learner gets the same 15 modules in the same order. That consistency is intentional. It means your team shares a common vocabulary, a common set of habits, and a common baseline — which matters when you are trying to run AI safely at scale.
 
 ---
 
@@ -12,57 +26,57 @@ Most AI onboarding fails because it lives outside the tool. You read a course, f
 AI:   Welcome back. You completed Module 2 last session. You're on Module 3:
       "When to Trust AI Output."
 
-      Ready to pick up where you left off, or do you want a quick recap of
-      Module 2 first?
+      Before we get into it — when you imagine AI being wrong, what does that
+      look like in your head? A confident wrong answer, or something more
+      obviously broken?
 
-You:  Quick recap, then let's go.
+You:  Confident wrong answer, I guess. That's the scary part.
 
-AI:   Module 2 covered how OpenCode works under the hood. The model reads
-      your context files, reasons over them, and responds. It does not have
-      memory between sessions unless you provide it.
+AI:   That's exactly the right thing to be worried about. Most people picture
+      something obviously broken — the AI says "2 + 2 = fish" and you catch it
+      immediately. The harder problem is when it sounds exactly right and isn't.
 
-      Module 3 is about calibration: how to know when to trust, verify, or
-      push back on what the AI tells you. It's one of the most practically
-      useful habits in this whole program.
-
-      The core framework is two questions...
+      Module 3 is built around that. We'll cover a two-question framework for
+      deciding when to trust, when to verify, and when to push back — and we'll
+      work through what hallucinations actually look like in practice...
 ```
 
-The learner never runs a command. They just talk to the AI. Progress is saved automatically after each module.
+The learner never runs a command to advance the program. Everything is conversational. Progress is saved after each module.
 
 ---
 
 ## How It Works
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                      OpenCode                           │
-│                                                         │
-│   AGENTS.md ──────► AI reads facilitator instructions  │
-│   org/ ────────────► AI reads your org's policy        │
-│   PROGRESS.md ─────► AI knows where you left off       │
-│                  │                                      │
-│                  ▼                                      │
-│         Conversational session                         │
-│         Module presentation                            │
-│         Exercise + feedback                            │
-│                  │                                      │
-│                  ▼                                      │
-│         PROGRESS.md updated, next session picks up     │
-└─────────────────────────────────────────────────────────┘
++-----------------------------------------------------------+
+|                        OpenCode                           |
+|                                                           |
+|   AGENTS.md ---------> AI reads facilitator instructions  |
+|   org/ --------------> AI reads your org's policy         |
+|   manifest.json -----> AI knows module order + links      |
+|   PROGRESS.md -------> AI knows where you left off        |
+|                  |                                        |
+|                  v                                        |
+|         Conversational session                            |
+|         Module presentation                               |
+|         Exercise + feedback                               |
+|                  |                                        |
+|                  v                                        |
+|         PROGRESS.md updated, next session picks up        |
++-----------------------------------------------------------+
 ```
 
-OpenCode already reads context files at session start. This repo uses that to turn OpenCode into a facilitator. No separate app, no web server, no build step.
+OpenCode reads context files at session start. This repo uses that behavior to turn OpenCode into a facilitator. No separate app, no web server, no build step.
 
-**The five files that make it work:**
+**The files that make it work:**
 
 | File | Role |
 |------|------|
-| `AGENTS.md` | Tells the AI its role, the curriculum, the tone, and escalation rules |
+| `AGENTS.md` | Tells the AI its role, the curriculum, the pedagogical approach, and escalation rules |
 | `modules/` | 15 plain markdown lesson files |
 | `org/` | Your org's policy, approved tools, and escalation contacts |
+| `manifest.json` | Ordered module list with time estimates and curated further reading links per module |
 | `PROGRESS.md` | Per-learner state, created by setup and updated after each module |
-| `manifest.json` | Ordered module list. Add a line here to add a module. |
 
 ---
 
@@ -78,9 +92,12 @@ git clone -> npm run setup -> open in OpenCode
                     +---------------+---------------+
                                     |
                     +---------------v---------------+
-                    |   Module presentation         |<--+
-                    |   Questions welcome           |   |
+                    |   Elicits prior knowledge     |<--+
+                    |   Names the wrong model first |   |
+                    |   Teaches section by section  |   |
+                    |   Checks understanding        |   |
                     |   Short exercise              |   |
+                    |   Rating + further reading    |   |
                     |   PROGRESS.md updated         |   |
                     +---------------+---------------+   |
                                     |                   |
@@ -110,11 +127,27 @@ Then open the `opencode-onboarding` folder in OpenCode. That's it.
 
 `npm run setup` creates your personal `PROGRESS.md` and copies the org config templates. It runs once. Everything after that happens in the conversation.
 
-There is no `npm run onboarding` command. The onboarding experience is conversational — the AI facilitates it. Running a terminal command is not how you advance through the program. If you see an `npm` error about a missing script, that is expected.
+There is no `npm run onboarding` command. The onboarding experience is conversational. If you see an npm error about a missing script, that is expected.
 
 ---
 
-### For Admins: Rolling Out to Your Team
+### For Admins
+
+The program has three layers. Understanding them is the key to running this well across your org.
+
+**Layer 1: The golden path (15 modules)**
+
+The core curriculum. Stable, authoritative, and consistent across every learner at your org. All 15 modules run in order, and every employee gets the same sequence. This is what makes shared vocabulary and shared habits possible. You do not need to touch these files unless you are adding an org-specific module.
+
+**Layer 2: Further reading (per-module curated links)**
+
+After each module, the facilitator can offer optional links for learners who want to go deeper. These live in `manifest.json` under each module's `further_reading` field. You control them. You can update, replace, or remove any link by editing `manifest.json` — no other files need to change. This layer is clearly presented to learners as optional and separate from the training.
+
+**Layer 3: Live research (on demand)**
+
+Learners can ask the AI to look up current context on any topic — recent developments, industry examples, updated documentation. This is not part of the structured curriculum. It is available because OpenCode is a live AI environment, not a static course. Learners use it when they want to; it does not affect module progression.
+
+**Rolling out to your team**
 
 **Step 1: Fill in org config**
 
@@ -132,9 +165,9 @@ The `org/*.template.*` files show the expected format. The AI reads these at the
 
 Fork or copy this repo, fill in the org config, then share it with learners. Each learner runs `npm run setup` themselves. Their `PROGRESS.md` is local and gitignored, so progress won't conflict across users.
 
-**Step 3: Optionally add your own modules**
+**Step 3: Optionally add org-specific modules**
 
-One markdown file plus one line in `manifest.json`. No code changes needed. See [CUSTOMIZATION.md](CUSTOMIZATION.md).
+One markdown file in `modules/` plus one entry in `manifest.json`. No code changes. See [CUSTOMIZATION.md](CUSTOMIZATION.md).
 
 ---
 
@@ -165,12 +198,12 @@ One markdown file plus one line in `manifest.json`. No code changes needed. See 
 ## Project Structure
 
 ```
-AGENTS.md               Facilitator instructions, OpenCode reads this first
+AGENTS.md               Facilitator instructions — OpenCode reads this first
 CUSTOMIZATION.md        How to add modules, customize org config, roll out
 PROGRESS.md             Learner progress (created by setup, gitignored)
-manifest.json           Ordered module list with time estimates
+manifest.json           Ordered module list with time estimates and further reading links
 setup.js                One-time scaffolding that copies templates and creates PROGRESS.md
-modules/                15 lesson files
+modules/                15 lesson files in plain markdown
 exercises/              Exercise prompts and helper-tool template
 org/                    Org config files (fill in before rollout) and *.template.* reference files
 docs/                   Backlog and implementation notes
@@ -182,7 +215,7 @@ archive/cli/            Prior Node.js CLI architecture, preserved for reference
 ## Security
 
 - No telemetry, no install hooks, no external network calls
-- Learner state is local only. PROGRESS.md never leaves the machine.
+- Learner state is local only — PROGRESS.md never leaves the machine
 - Read-only-first patterns throughout the curriculum and exercises
 
 See [SECURITY.md](SECURITY.md) and [THREAT_MODEL.md](THREAT_MODEL.md) for details.
