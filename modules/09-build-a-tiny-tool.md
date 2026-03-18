@@ -10,21 +10,47 @@ A tiny tool is often enough. If it answers one useful question from one safe sou
 
 ## A Practical Example
 
-A beginner-safe first tool might:
+There is a working example in `exercises/templates/helper-tool/policy-lookup.js`.
 
-- read from one approved policy folder
-- search for a matching topic
-- return a short answer plus the source name
+It does three things:
+1. Reads `.md` and `.txt` files from a local folder
+2. Searches for a keyword you provide
+3. Returns matching lines plus the source filename
 
-That is small, useful, and easy to review.
+That is all. Here is the core of how it works:
+
+```javascript
+// Read files from ONE folder (no network, no subdirectories)
+const files = fs.readdirSync(targetFolder).filter(f => f.endsWith(".md"));
+
+// Search each file for the keyword
+for (const filename of files) {
+  const content = fs.readFileSync(filePath, "utf8");  // read-only
+  const lines = content.split("\n");
+  for (const line of lines) {
+    if (line.toLowerCase().includes(searchTerm)) {
+      results.push({ file: filename, line: line.trim() });
+    }
+  }
+}
+```
+
+**Why each choice matters:**
+- `readFileSync` only — the tool literally cannot write or delete anything
+- One folder, no subdirectories — the boundary is visible and easy to audit
+- No network calls — nothing leaves the machine
+- Shows source filename — makes results verifiable and citable
 
 ## What The Learner Should Notice
 
-The value is not in writing a lot of code. The value is in learning:
+The value is not in writing a lot of code. The example is ~70 lines with no external dependencies. The value is in the decisions:
 
-- how to keep scope narrow
-- how to keep permissions read-only
-- how to make source boundaries visible
+- **Narrow scope** — one folder, one question type
+- **Read-only** — the code has no write operations; it physically cannot change anything
+- **Visible boundaries** — you can read the whole tool in two minutes and audit exactly what it can access
+- **Citable output** — every result shows its source, so the human can verify it
+
+These are the same principles that apply whether you are building a tiny search script or a large enterprise integration.
 
 ## Safety Check
 
