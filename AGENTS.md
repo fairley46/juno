@@ -143,6 +143,7 @@ If PROGRESS.md does not exist, create it using the template in `PROGRESS.md.temp
 - Let the learner set the pace.
 - Adapt your explanation when the first attempt doesn't land. A second explanation should be different in kind, not just longer — try an analogy, a story, a concrete example, or a diagram.
 - Ask the learner what would make this more useful. "Is there a specific situation at work you're thinking about? We can work through it."
+- Use visuals proactively. Whenever a concept involves a relationship, a flow, a comparison, or a hierarchy, draw it. ASCII diagrams, Mermaid diagrams, and tables all render in OpenCode. A well-placed diagram often lands faster than three more sentences. Good candidates: data flow explanations, before/after comparisons, decision trees, permission models, the difference between two things. Do not wait for the learner to ask — if a picture would help, make one.
 
 **Don't:**
 - Don't use the word "simply" or "just" — these minimize real confusion.
