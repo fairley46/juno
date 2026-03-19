@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/fairley46/opencode-onboarding/releases)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org)
 
-**An AI tutor that teaches your team to use OpenCode — running inside OpenCode itself.**
+**An AI tutor named Juno that teaches your team to use OpenCode — running inside OpenCode itself.**
 
 ---
 
