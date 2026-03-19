@@ -1,7 +1,7 @@
 # OpenCode Onboarding
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](https://github.com/fairley46/opencode-onboarding/releases)
+[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/fairley46/opencode-onboarding/releases)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org)
 
 **An AI tutor that teaches your team to use OpenCode — running inside OpenCode itself.**
@@ -74,12 +74,14 @@ Most AI training tools present content. This one teaches.
 
 | What the tutor does | Why it matters |
 |---------------------|----------------|
+| Evaluates your learning style before the first module | Activist, Reflector, Theorist, or Pragmatist — Juno adapts how she teaches from session one |
 | Asks what you already think before each concept | Teaches to your actual starting point, not a blank slate |
 | Names the wrong mental model before the right one | Clearing the old picture is half the work |
 | Finds analogies in your own work context | Concepts stick when they attach to something familiar |
 | Checks understanding with explain-it-back, not "does that make sense?" | Surfaces real gaps instead of performed agreement |
 | Reads engagement — slows down and tries a different approach | No one gets left behind with the same explanation repeated |
 | Connects each module to the one before it | Builds a mental map, not isolated lessons |
+| Runs an exercise after every module | 15 modules, 15 exercises — reinforcement, not just exposure |
 | Offers curated further reading after each module | Go deeper on what matters to you, skip the rest |
 | Searches current industry context on demand | Stable training + live awareness, clearly separated |
 
@@ -100,6 +102,7 @@ git clone → npm run setup → open folder in OpenCode
                                         |
                           +-------------v--------------+
                           |  Greets learner            |
+                          |  Evaluates learning style  |
                           |  Explains how it teaches   |  <--+
                           |  Elicits prior knowledge   |     |
                           |  Teaches section by section|     |
@@ -159,7 +162,7 @@ One markdown file in `modules/` plus one entry in `manifest.json`. No code chang
 
 ## Curriculum
 
-15 modules · ~2 hours total · one short exercise each
+15 modules · 15 exercises · ~2 hours total
 
 | # | Module | Focus |
 |---|--------|-------|
@@ -189,7 +192,7 @@ CUSTOMIZATION.md   How to add modules, customize org config, roll out
 manifest.json      Module list with time estimates and further reading links
 setup.js           One-time scaffolding: copies templates, creates PROGRESS.md
 modules/           15 lesson files in plain markdown
-exercises/         Exercise prompts and helper-tool template
+exercises/         15 exercises — one per module — plus helper-tool template
 org/               Org config files + *.template.* reference files
 PROGRESS.md        Per-learner state (created by setup, gitignored)
 docs/              Backlog and implementation notes
