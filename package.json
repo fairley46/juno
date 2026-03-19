@@ -6,8 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "setup": "node setup.js",
-    "export": "node export.js",
-    "test": "node --test"
+    "export": "node export.js"
   },
   "engines": {
     "node": ">=20"
