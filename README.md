@@ -1,8 +1,12 @@
-# OpenCode Onboarding
+<p align="center">
+  <img src="assets/juno-logo.png" alt="Juno" width="320" />
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)](https://github.com/fairley46/opencode-onboarding/releases)
-[![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="https://github.com/fairley46/opencode-onboarding/releases"><img src="https://img.shields.io/badge/version-0.5.0-blue.svg" alt="Version"></a>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg" alt="Node"></a>
+</p>
 
 **An AI tutor named Juno that teaches your team to use OpenCode — running inside OpenCode itself.**
 
