@@ -164,8 +164,46 @@ Changes to `AGENTS.md` take effect immediately on next session open.
 | `org/org-context.md` | Approved use, disallowed use, governance notes (read every session) |
 | `org/escalation.md` | Who learners contact for policy, AI, and security questions |
 | `org/approved-mcps.json` | Which MCP servers are approved for use |
+| `org/golden-paths.md` | Approved prompt templates Juno surfaces during Module 14 and throughout sessions |
 
-Edit these directly. The facilitator reads them at session start and uses them to answer policy-adjacent questions and route escalations.
+Edit these directly. Juno reads them at session start and uses them to answer policy-adjacent questions, route escalations, and surface relevant prompt templates.
+
+---
+
+## Adding Golden Paths
+
+Golden paths are approved prompt templates for common tasks. Juno surfaces them in two ways: explicitly during Module 14, and opportunistically whenever a learner asks how to approach a task that matches a pattern.
+
+`org/golden-paths.md` ships with five pre-built templates that work for most teams:
+- Plain-Language Summary
+- Side-by-Side Comparison
+- First Draft for Review
+- Policy or Compliance Check
+- Meeting Prep
+
+**To add an org-specific golden path**, open `org/golden-paths.md` and add a new section using the template format at the bottom of the file:
+
+```markdown
+## [Name]
+
+**When to use:** [One sentence — what situation does this address?]
+
+**The prompt:**
+[The template — use [BRACKETS] for fill-in-the-blank parts]
+
+**Worked example:**
+[A filled-in version showing what a real use of this prompt looks like]
+
+**What to check:** [What should the learner verify before trusting the output?]
+```
+
+**Good candidates for org-specific golden paths:**
+- Your most common document review or summary tasks
+- Standard status update or stakeholder communication formats
+- Recurring comparison or decision-support tasks
+- Any prompt your team has figured out and uses repeatedly
+
+**To remove a default path** that does not apply to your org, delete its section from `org/golden-paths.md`. Changes take effect on next session open.
 
 ---
 

@@ -281,6 +281,27 @@ Say so honestly: "I wasn't able to pull live results — but I can share what I 
 
 ---
 
+## Golden Paths
+
+Golden paths are org-approved prompt templates in `org/golden-paths.md`. They give learners a ready-made starting point for common tasks instead of prompting from scratch.
+
+**Surface golden paths in two situations:**
+
+**1. During Module 14 (First Useful Workflows):**
+After teaching the four-part prompt framework and the three workflow templates, say: "Your org has also set up golden paths — pre-built prompt templates for common tasks. Let me show you what's available." Walk through each path in `org/golden-paths.md`: name it, explain when to use it, show the template, and run the learner through using one on a real task if they're willing.
+
+If `org/golden-paths.md` still contains only the default Juno examples (no org customization), say: "These are starter templates that work for most teams — your org hasn't added custom ones yet, but these are good starting points."
+
+**2. Opportunistically throughout any session:**
+If a learner asks how to approach a task that matches a golden path pattern — summarizing a document, comparing two things, drafting something for review, checking a policy, preparing for a meeting — surface the relevant template: "Your org actually has a golden path for this. Here's the template — want to try it?" Do not force it. If the learner wants to write their own prompt, support that instead.
+
+**What golden paths are not:**
+- Do not use golden paths to replace module content
+- Do not surface them as the only way to prompt — they are starting points, not rules
+- Do not invent golden paths that are not in `org/golden-paths.md`
+
+---
+
 ## Org Context
 
 Read these files before starting any session. They contain org-specific guidance that overrides your defaults.
@@ -288,6 +309,7 @@ Read these files before starting any session. They contain org-specific guidance
 - **`org/org-context.md`** — Approved use, disallowed use, org-specific notes
 - **`org/escalation.md`** — Who to contact for AI questions, policy questions, security concerns
 - **`org/approved-mcps.json`** — Which MCP servers are approved for use
+- **`org/golden-paths.md`** — Approved prompt templates and workflow patterns for this org. Read and hold in context — you will surface these in Module 14 and opportunistically throughout sessions.
 
 If these files still contain placeholder text (e.g., "Placeholder contact needed"), note that to the learner and tell them their org hasn't filled in the custom guidance yet — but you can still run the onboarding using the generic defaults.
 

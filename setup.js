@@ -31,6 +31,7 @@ console.log('Org config:');
 copyIfMissing('org/org-context.template.md', 'org/org-context.md');
 copyIfMissing('org/escalation.template.md', 'org/escalation.md');
 copyIfMissing('org/approved-mcps.template.json', 'org/approved-mcps.json');
+copyIfMissing('org/golden-paths.template.md', 'org/golden-paths.md');
 
 // Scaffold PROGRESS.md from template
 console.log('\nProgress tracking:');

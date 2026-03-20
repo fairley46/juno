@@ -76,6 +76,20 @@ You'll see this pattern in all three workflows below.
 
 ---
 
+## Golden Paths
+
+A golden path is a prompt template that has already been built, tested, and approved for a common task. Instead of starting from a blank prompt, you start from a pattern that works.
+
+The four-part framework you just learned is the structure behind every golden path. A golden path is what it looks like when someone has already done the work of figuring out the right goal, source, format, and review boundary for a specific recurring task — and written it down so others can reuse it.
+
+**Why this matters:** Most teams are solving the same prompting problems independently. One person figures out the right way to summarize a vendor contract. Another figures out the right way to compare two policy drafts. Nobody writes it down. The next person starts from scratch. Golden paths break that pattern.
+
+**Your org's golden paths are in `org/golden-paths.md`.** Juno will walk you through them now — what each one is for, what the template looks like, and how to use it. After that, you will try one on a real task.
+
+If your org has not customized this file yet, the defaults are solid starting points that work for most common tasks. You can use them as-is or adapt them.
+
+---
+
 ## Prompting Is a Conversation, Not a One-Shot
 
 The most common mistake with prompting is treating it as a single attempt. You write something, it does not quite work, you conclude the tool is not useful. That is not what is happening.
