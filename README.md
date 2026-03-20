@@ -186,8 +186,9 @@ After each module, the tutor searches for current industry developments on deman
 | `org/org-context.md` | Approved uses, disallowed uses, governance notes |
 | `org/escalation.md` | Who learners contact for policy and security questions |
 | `org/approved-mcps.json` | Which MCP servers learners are allowed to connect |
+| `org/golden-paths.md` | Approved prompt templates Juno surfaces in Module 14 and throughout sessions |
 
-See `org/*.template.*` files for the expected format. The tutor reads these at the start of every session.
+See `org/*.template.*` files for the expected format. The tutor reads these at the start of every session. `golden-paths.md` ships with five pre-built templates — add your own org-specific patterns in the same file. See [CUSTOMIZATION.md](CUSTOMIZATION.md) for instructions.
 
 **Step 2 — Share the repo**
 

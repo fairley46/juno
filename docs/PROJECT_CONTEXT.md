@@ -70,7 +70,7 @@ If you're evaluating whether to fork this for a different AI tool, the question 
 
 See `docs/CUSTOMIZATION_BACKLOG.md` for the full current backlog. Short version:
 
-1. **Org config** — `org/org-context.md`, `org/escalation.md`, `org/approved-mcps.json` need real values before rolling out to a real team. Templates and a filled-in example (`org/examples/`) are included.
+1. **Org config** — `org/org-context.md`, `org/escalation.md`, `org/approved-mcps.json`, and `org/golden-paths.md` need real values before rolling out to a real team. Templates and a filled-in example (`org/examples/`) are included. `golden-paths.md` ships with five pre-built templates that work without customization.
 2. **URL verification** — three OpenCode-specific URLs in `further_reading` need to be confirmed live before distributing, and further reading links should be broadened to cover non-OpenCode agents.
 3. **Tool-agnostic variant** — the architecture works in Claude.ai Projects, Cursor, and others. Not yet validated.
 4. **Distribution model** — current path (fork → setup → open in agent of choice) works for technical teams. Broader rollout needs a lower-friction option.
@@ -88,7 +88,7 @@ export.js                    Generates plain-text completion report from PROGRES
 modules/                     15 lesson files in plain markdown
 exercises/                   15 exercise files — one per module
 exercises/templates/         Helper tool example for Module 12
-org/                         Org config (live) + templates + examples
+org/                         Org config (live) + templates + examples; golden-paths.md for prompt templates
 assets/                      Juno logo
 docs/                        Backlog, industry references, this file
 CUSTOMIZATION.md             How to add modules, customize org config, roll out
@@ -101,6 +101,7 @@ CONTRIBUTING.md              How to contribute (add modules, edit behavior, edit
 
 | Version | What changed |
 |---------|-------------|
+| v1.0.2 | Golden paths — org/golden-paths.md with 5 pre-built templates; Juno surfaces in Module 14 + opportunistically; admin guide in CUSTOMIZATION.md; getting started improvements (install links, agent table, non-technical callout) |
 | v1.0.1 | Rename to Juno (repo: juno); tagline: "The AI tutor that lives inside your agent"; stale OpenCode references cleaned across all docs |
 | v1.0.0 | Tool-agnostic rebrand; platform quick starts for 6 agents; model recommendation; role detection + Role Adaptation section; vocabulary + model differences added to Module 2; iterative prompting added to Module 14; four-part prompt framework forward reference in Module 1 |
 | v0.6.0 | Internal pre-release — branding and role detection in progress |

@@ -49,6 +49,15 @@ Several further_reading URLs in manifest.json reference OpenCode-specific pages 
 
 ## Resolved
 
+**v1.0.2 — Golden paths + getting started improvements (completed 2026-03-19):**
+- ✅ `org/golden-paths.template.md` — 5 pre-built prompt templates (summary, comparison, first draft, policy check, meeting prep)
+- ✅ `setup.js` scaffolds `org/golden-paths.md` on first run
+- ✅ AGENTS.md: reads golden-paths.md at session start; surfaces in Module 14 and opportunistically
+- ✅ Module 14: Golden Paths section added — explains concept, hands off to Juno to walk through org templates
+- ✅ CUSTOMIZATION.md: admin guide for adding, removing, and customizing golden paths
+- ✅ README, PROJECT_CONTEXT.md: docs updated to reflect golden paths
+- ✅ Prerequisites: install links for Git, Node.js, all 6 agents; non-technical user callout
+
 **v1.0.0 — Tool-agnostic rebrand + engineering role adaptation (completed 2026-03-19):**
 - ✅ Repo renamed: `opencode-onboarding` → `juno-ai-tutor` → `juno`
 - ✅ Product renamed: Juno — AI Tutor throughout
