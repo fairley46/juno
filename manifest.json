@@ -1,7 +1,7 @@
 {
-  "id": "opencode-onboarding",
-  "version": "0.5.0",
-  "title": "OpenCode Enterprise Onboarding",
+  "id": "juno-ai-tutor",
+  "version": "0.6.0",
+  "title": "Juno — AI Tutor",
   "modules": [
     {
       "id": "01-welcome",

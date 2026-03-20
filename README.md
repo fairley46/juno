@@ -1,4 +1,4 @@
-<h1 align="center">Juno — OpenCode Onboarding</h1>
+<h1 align="center">Juno — AI Tutor</h1>
 
 <p align="center">
   <img src="assets/juno-logo.png" alt="Juno" width="320" />
@@ -6,25 +6,46 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <a href="https://github.com/fairley46/opencode-onboarding/releases"><img src="https://img.shields.io/badge/version-0.5.0-blue.svg" alt="Version"></a>
+  <a href="https://github.com/fairley46/juno-ai-tutor/releases"><img src="https://img.shields.io/badge/version-0.6.0-blue.svg" alt="Version"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg" alt="Node"></a>
 </p>
 
-**An AI tutor named Juno that teaches your team to use OpenCode — running inside OpenCode itself.**
+**An AI tutor that teaches your team to use AI effectively — running inside the AI agent of your choice.**
+
+---
+
+## Prerequisites
+
+- **Git**
+- **Node.js 20+**
+- **An AI agent** — see platform quick starts below
+
+> **Model recommendation:** Use the most capable model your tool supports. Juno's behavioral protocol works best on frontier models. On older or smaller models you may see inconsistent behavior — Juno may skip steps or lose track of progress state.
 
 ---
 
 ## Quick Start
 
+**Step 1 — Clone and set up (same for all platforms)**
+
 ```bash
-git clone https://github.com/fairley46/opencode-onboarding.git
-cd opencode-onboarding
+git clone https://github.com/fairley46/juno-ai-tutor.git
+cd juno-ai-tutor
 npm run setup
 ```
 
-Then open the `opencode-onboarding` folder in OpenCode. The tutor takes it from there.
+**Step 2 — Open your session**
 
-**Requirements:** [OpenCode](https://opencode.ai) (desktop or terminal) · Node.js 20+
+| Platform | How to start |
+|----------|-------------|
+| **OpenCode** | Open the `juno-ai-tutor` folder in OpenCode. Juno starts automatically. |
+| **Claude Code CLI** | `cp AGENTS.md CLAUDE.md` then run `claude` in the folder |
+| **Gemini CLI** | `cp AGENTS.md GEMINI.md` then run `gemini` in the folder |
+| **OpenAI Codex CLI** | Run `codex` in the folder — reads `AGENTS.md` natively |
+| **Cursor / VS Code** | Open the folder, add `AGENTS.md` as context or copy to `.cursorrules` |
+| **Claude.ai Projects** | Paste `AGENTS.md` into project instructions, upload `modules/` and `exercises/` as files. Track progress manually — `PROGRESS.md` won't auto-update. |
+
+Juno introduces herself, evaluates your learning style, and takes it from there.
 
 ---
 
@@ -32,7 +53,7 @@ Then open the `opencode-onboarding` folder in OpenCode. The tutor takes it from 
 
 Most enterprise AI onboarding fails for the same reason: it lives outside the tool. Someone reads a course, watches a video, or sits through a workshop. Then on day one they open the actual product and face it alone.
 
-This program runs entirely inside OpenCode. The AI is the tutor. You learn how to use OpenCode by using it — with a tutor running inside the very thing you are learning.
+Juno runs inside the AI agent your team is already using. You learn how to work with AI by working with AI — with a tutor running in the very environment you are learning.
 
 ---
 
@@ -91,23 +112,24 @@ Most AI training tools present content. This one teaches.
 | Offers curated further reading after each module | Go deeper on what matters to you, skip the rest |
 | Searches current industry context on demand | Stable training + live awareness, clearly separated |
 
-Every learner at your org gets the same 15 modules in the same order. That consistency is intentional — it builds shared vocabulary, shared habits, and a common baseline for running AI safely at scale.
+Every learner at your org gets the same 15 modules in the same order. That consistency is intentional — it builds shared vocabulary, shared habits, and a common baseline for using AI effectively and safely at scale.
 
 ---
 
 ## How It Works
 
 ```
-git clone → npm run setup → open folder in OpenCode
+git clone → npm run setup → open in your AI agent
                                         |
                           +-------------v--------------+
-                          |  AI reads AGENTS.md        |
-                          |  AI reads org/ config      |
-                          |  AI reads PROGRESS.md      |
+                          |  Agent reads AGENTS.md     |
+                          |  Agent reads org/ config   |
+                          |  Agent reads PROGRESS.md   |
                           +-------------+--------------+
                                         |
                           +-------------v--------------+
                           |  Greets learner            |
+                          |  Assesses role             |
                           |  Evaluates learning style  |
                           |  Explains how it teaches   |  <--+
                           |  Elicits prior knowledge   |     |
@@ -127,7 +149,7 @@ git clone → npm run setup → open folder in OpenCode
                           +----------------------------+
 ```
 
-OpenCode reads context files at session start. This repo uses that behavior to turn OpenCode into a tutor. No separate app, no web server, no build step.
+Most AI coding agents read context files at session start. This repo uses that behavior to turn your agent into a tutor. No separate app, no web server, no build step.
 
 ---
 
@@ -193,7 +215,7 @@ One markdown file in `modules/` plus one entry in `manifest.json`. No code chang
 ## Project Structure
 
 ```
-AGENTS.md          Tutor instructions — OpenCode reads this first
+AGENTS.md          Tutor instructions — your AI agent reads this first
 CUSTOMIZATION.md   How to add modules, customize org config, roll out
 manifest.json      Module list with time estimates and further reading links
 setup.js           One-time scaffolding: copies templates, creates PROGRESS.md
