@@ -101,7 +101,7 @@ CONTRIBUTING.md              How to contribute (add modules, edit behavior, edit
 
 | Version | What changed |
 |---------|-------------|
-| v1.0.2 | Golden paths — org/golden-paths.md with 5 pre-built templates; Juno surfaces in Module 14 + opportunistically; admin guide in CUSTOMIZATION.md; getting started improvements (install links, agent table, non-technical callout) |
+| v1.1.0 | Golden paths — org/golden-paths.md with 5 pre-built templates; Juno surfaces in Module 14 + opportunistically; admin guide in CUSTOMIZATION.md; getting started improvements (install links, agent table, non-technical callout); Module 5 renamed to AI Tool Modes; Juno speaker label in README dialogue |
 | v1.0.1 | Rename to Juno (repo: juno); tagline: "The AI tutor that lives inside your agent"; stale OpenCode references cleaned across all docs |
 | v1.0.0 | Tool-agnostic rebrand; platform quick starts for 6 agents; model recommendation; role detection + Role Adaptation section; vocabulary + model differences added to Module 2; iterative prompting added to Module 14; four-part prompt framework forward reference in Module 1 |
 | v0.6.0 | Internal pre-release — branding and role detection in progress |

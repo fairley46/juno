@@ -49,7 +49,7 @@ Several further_reading URLs in manifest.json reference OpenCode-specific pages 
 
 ## Resolved
 
-**v1.0.2 — Golden paths + getting started improvements (completed 2026-03-19):**
+**v1.1.0 — Golden paths + getting started improvements (completed 2026-03-19):**
 - ✅ `org/golden-paths.template.md` — 5 pre-built prompt templates (summary, comparison, first draft, policy check, meeting prep)
 - ✅ `setup.js` scaffolds `org/golden-paths.md` on first run
 - ✅ AGENTS.md: reads golden-paths.md at session start; surfaces in Module 14 and opportunistically
