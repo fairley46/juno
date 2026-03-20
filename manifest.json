@@ -1,7 +1,7 @@
 {
-  "id": "juno-ai-tutor",
-  "version": "1.0.0",
-  "title": "Juno — AI Tutor",
+  "id": "juno",
+  "version": "1.0.1",
+  "title": "Juno",
   "modules": [
     {
       "id": "01-welcome",

@@ -1,7 +1,7 @@
 {
-  "name": "juno-ai-tutor",
-  "version": "1.0.0",
-  "description": "Juno — AI Tutor. An AI tutor that teaches your team to use AI effectively, running inside the agent of your choice.",
+  "name": "juno",
+  "version": "1.0.1",
+  "description": "Juno. The AI tutor that lives inside your agent.",
   "private": true,
   "type": "commonjs",
   "scripts": {

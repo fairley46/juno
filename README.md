@@ -1,4 +1,4 @@
-<h1 align="center">Juno — AI Tutor</h1>
+<h1 align="center">Juno</h1>
 
 <p align="center">
   <img src="assets/juno-logo.png" alt="Juno" width="320" />
@@ -6,11 +6,11 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <a href="https://github.com/fairley46/juno-ai-tutor/releases"><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version"></a>
+  <a href="https://github.com/fairley46/juno/releases"><img src="https://img.shields.io/badge/version-1.0.1-blue.svg" alt="Version"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg" alt="Node"></a>
 </p>
 
-**An AI tutor that teaches your team to use AI effectively — running inside the AI agent of your choice.**
+**The AI tutor that lives inside your agent.**
 
 ---
 
