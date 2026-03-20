@@ -16,9 +16,20 @@
 
 ## Prerequisites
 
-- **Git**
-- **Node.js 20+**
-- **An AI agent** — see platform quick starts below
+- **Git** — [git-scm.com/downloads](https://git-scm.com/downloads)
+- **Node.js 20+** — [nodejs.org](https://nodejs.org) (download the LTS version)
+- **An AI agent** — install one before you start:
+
+| Agent | Install |
+|-------|---------|
+| OpenCode | [opencode.ai](https://opencode.ai) |
+| Claude Code CLI | [docs.anthropic.com/claude-code](https://docs.anthropic.com/en/docs/claude-code/overview) |
+| Gemini CLI | [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) |
+| OpenAI Codex CLI | [github.com/openai/codex](https://github.com/openai/codex) |
+| Cursor | [cursor.com](https://cursor.com) |
+| Claude.ai Projects | [claude.ai](https://claude.ai) — no install needed, runs in the browser |
+
+> **Not sure which to pick?** Claude.ai Projects requires no install and works in any browser — it's the lowest-friction starting point for non-technical users. OpenCode and Claude Code CLI are the best experience for technical teams.
 
 > **Model recommendation:** Use the most capable model your tool supports. Juno's behavioral protocol works best on frontier models. On older or smaller models you may see inconsistent behavior — Juno may skip steps or lose track of progress state.
 

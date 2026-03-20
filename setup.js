@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// setup.js — One-time scaffolding for OpenCode Onboarding
+// setup.js — One-time scaffolding for Juno
 // Run once: npm run setup
-// Then open this folder in OpenCode to begin.
+// Then open this folder in your AI agent of choice to begin.
 
 const fs = require('fs');
 const path = require('path');
@@ -24,7 +24,7 @@ function copyIfMissing(src, dest) {
   return true;
 }
 
-console.log('\nOpenCode Onboarding Setup\n');
+console.log('\nJuno Setup\n');
 
 // Scaffold org config files from templates
 console.log('Org config:');
@@ -40,4 +40,4 @@ console.log('\nDone.\n');
 console.log('Next steps:');
 console.log('  1. Edit org/org-context.md with your organization\'s policies (optional but recommended)');
 console.log('  2. Edit org/escalation.md with your escalation contacts (optional but recommended)');
-console.log('  3. Open this folder in OpenCode to begin the onboarding\n');
+console.log('  3. Open this folder in your AI agent of choice to begin (see README for platform instructions)\n');
