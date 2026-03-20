@@ -1,8 +1,8 @@
-# Module 5: OpenCode Modes: Plan, Edit, and Agent
+# Module 5: AI Tool Modes: Plan, Edit, and Agent
 
 ## Why This Matters
 
-OpenCode has different operating modes that give the AI different levels of autonomy. Choosing the right mode is not a technical detail — it is a governance decision. Understanding what each mode can do puts you in control.
+Most AI coding tools have different operating modes that give the AI different levels of autonomy. Choosing the right mode is not a technical detail — it is a governance decision. Understanding what each mode can do puts you in control.
 
 ## The Three Modes
 
@@ -77,7 +77,7 @@ When in doubt, drop down a mode. It costs a few extra seconds. Reversing an unin
 
 ## Industry Context
 
-The plan/edit/agent distinction in OpenCode reflects a much bigger question the entire AI industry is wrestling with right now: how much autonomy should AI have, and who is responsible when it acts?
+The plan/edit/agent distinction reflects a much bigger question the entire AI industry is wrestling with right now: how much autonomy should AI have, and who is responsible when it acts?
 
 Every major AI tool is navigating a version of this. Some default to high autonomy and let users dial it back. Others default to read-only and require explicit permission to act. The terminology differs — "agentic mode," "autopilot," "full auto" — but the underlying control ladder is the same concept. More autonomy means faster results and fewer checkpoints. Less autonomy means more review and more confidence in what happened.
 

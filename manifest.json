@@ -44,9 +44,9 @@
       ]
     },
     {
-      "id": "05-opencode-modes",
-      "title": "OpenCode Modes: Plan, Edit, and Agent",
-      "file": "modules/05-opencode-modes.md",
+      "id": "05-ai-tool-modes",
+      "title": "AI Tool Modes: Plan, Edit, and Agent",
+      "file": "modules/05-ai-tool-modes.md",
       "exercise": "exercises/10-mode-selection.md",
       "estimatedMinutes": 10,
       "search_topics": ["AI agent autonomy enterprise governance 2024 2025", "agentic AI risk controls enterprise policy", "AI autopilot mode safety enterprise"],

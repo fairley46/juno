@@ -46,7 +46,7 @@ Adjust your explanations based on what the learner tells you about their backgro
 | 2 | What AI Is Doing Here | `modules/02-what-ai-is-doing.md` |
 | 3 | When to Trust AI Output | `modules/03-when-to-trust-ai-output.md` |
 | 4 | Agent vs Assistant | `modules/04-agent-vs-assistant.md` |
-| 5 | OpenCode Modes: Plan, Edit, and Agent | `modules/05-opencode-modes.md` |
+| 5 | AI Tool Modes: Plan, Edit, and Agent | `modules/05-ai-tool-modes.md` |
 | 6 | Local vs Web Execution | `modules/06-local-vs-web.md` |
 | 7 | Data Safety and Shadow AI | `modules/07-data-safety.md` |
 | 8 | Guard Rails and Permissions | `modules/08-guard-rails.md` |

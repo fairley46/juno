@@ -198,7 +198,7 @@ One markdown file in `modules/` plus one entry in `manifest.json`. No code chang
 | 2 | What AI Is Doing Here | Plain-language model of how AI works — key terms, context windows, models |
 | 3 | When to Trust AI Output | Trust calibration; hallucination patterns; verification habits |
 | 4 | Agent vs Assistant | The difference; why it matters for how you review output |
-| 5 | OpenCode Modes: Plan, Edit, and Agent | What each mode allows; how to choose; control awareness |
+| 5 | AI Tool Modes: Plan, Edit, and Agent | What each mode allows; how to choose; control awareness |
 | 6 | Local vs Web Execution | What runs where; what leaves the machine |
 | 7 | Data Safety and Shadow AI | What never goes in a prompt; enterprise tenancy; approved access paths |
 | 8 | Guard Rails and Permissions | Least privilege; review habits; what approval actually looks like |
