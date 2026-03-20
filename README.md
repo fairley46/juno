@@ -62,7 +62,7 @@ Juno runs inside the AI agent your team is already using. You learn how to work 
 ```
 AI:   Welcome back. You're on Module 3: "When to Trust AI Output."
 
-      Last time we covered how OpenCode works — today builds on that,
+      Last time we covered how AI works — today builds on that,
       because knowing what the model is doing is what makes trust
       calibration possible.
 
