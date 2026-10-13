@@ -18,7 +18,7 @@ Fresh setup turns a clone into a learner-ready workspace by creating `PROGRESS.m
 Preconditions:
 
 - Isolated workdir with repo files present and `PROGRESS.md` absent.
-- Doctor passed (`node scripts/ci-check.js` may fail before first setup only on progress-dependent checks; prefer syntax + logo checks first).
+- Doctor passed.
 
 - **Create progress.** Run `npm run setup`. Stdout includes `created: PROGRESS.md`. File exists and is non-empty.
 - **Second run.** Run `npm run setup` again. Stdout includes `already exists: PROGRESS.md`. File contents unchanged.

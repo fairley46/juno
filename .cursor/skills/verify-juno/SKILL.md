@@ -14,7 +14,7 @@ Work in an isolated copy so the developer's tree stays untouched:
 ```bash
 RUN_ID=$(date +%s)
 WORK=/tmp/juno-verify-$RUN_ID
-git clone --depth 1 "file://$(pwd)" "$WORK"   # or clone the remote URL
+git clone --depth 1 "file://$(pwd)" "$WORK"
 cd "$WORK"
 npm run setup
 ```
@@ -79,4 +79,3 @@ Remove only the isolated workdir you created (`rm -rf /tmp/juno-verify-$RUN_ID`)
 ## Helpers
 
 - `node scripts/ci-check.js` — curriculum and script integrity (same checks CI runs).
-- Invocation is shown in Doctor and Drive above.

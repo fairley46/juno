@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-// Curriculum and script integrity for CI and verify-juno.
-// Run: node scripts/ci-check.js
 
 const fs = require('fs');
 const path = require('path');
