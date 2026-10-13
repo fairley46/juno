@@ -7,10 +7,23 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <a href="https://github.com/fairley46/juno/releases"><img src="https://img.shields.io/badge/version-1.2.0-blue.svg" alt="Version"></a>
+  <a href="https://github.com/fairley46/juno/actions/workflows/ci.yml"><img src="https://github.com/fairley46/juno/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg" alt="Node"></a>
 </p>
 
-**The AI tutor that lives inside your agent.**
+**An AI onboarding and training tool that lives inside your agent.**
+
+Juno turns an AI coding agent into a structured tutor. Teams run a 15-module curriculum in the same tool they will use at work, with progress tracked locally and org policy files the tutor reads every session.
+
+<p align="center">
+  <img src="assets/session-preview.png" alt="Juno tutoring session preview" width="720" />
+</p>
+
+---
+
+## Status
+
+Public MIT project at **v1.2.0**. Stable curriculum (15 modules, 15 exercises). Active maintenance is polish and org customization docs, not a rewrite of the teaching path.
 
 ---
 
@@ -128,7 +141,18 @@ Every learner at your org covers the same core content. Non-technical learners g
 
 ---
 
-## How It Works
+## Architecture overview
+
+Most AI coding agents read context files at session start. Juno uses that behavior. There is no separate app, no web server, and no build step.
+
+| Layer | Role |
+|-------|------|
+| `AGENTS.md` | Tutor protocol the agent follows (one module at a time, exercises required) |
+| `modules/` + `exercises/` | Golden-path curriculum content |
+| `manifest.json` | Module order, exercises, further reading, search topics |
+| `org/` | Org-approved use, escalation contacts, MCP allowlist, golden-path prompts |
+| `PROGRESS.md` | Per-learner state (created by setup, gitignored) |
+| `setup.js` / `export.js` | One-time scaffold and completion report |
 
 ```
 git clone → npm run setup → open in your AI agent
@@ -161,8 +185,6 @@ git clone → npm run setup → open in your AI agent
                           |  ~2 hours across sessions  |
                           +----------------------------+
 ```
-
-Most AI coding agents read context files at session start. This repo uses that behavior to turn your agent into a tutor. No separate app, no web server, no build step.
 
 ---
 

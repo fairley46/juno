@@ -1,12 +1,13 @@
 {
   "name": "juno",
-  "version": "1.1.0",
-  "description": "Juno. The AI tutor that lives inside your agent.",
+  "version": "1.2.0",
+  "description": "Juno. An AI onboarding and training tutor that lives inside your agent.",
   "private": true,
   "type": "commonjs",
   "scripts": {
     "setup": "node setup.js",
-    "export": "node export.js"
+    "export": "node export.js",
+    "ci": "node scripts/ci-check.js"
   },
   "engines": {
     "node": ">=20"
