@@ -1,12 +1,23 @@
 {
+  "_comment": "EXAMPLE DEFAULTS. Edit before production rollout. The mcpServers rows are sample example entries. Do not connect them until your organization replaces them with real approved servers.",
   "mcpServers": [
     {
-      "id": "ph-docs-server",
-      "label": "PH Placeholder Docs Server",
-      "status": "stub",
+      "id": "internal-docs-readonly",
+      "label": "Internal docs",
+      "status": "approved",
       "access": "read-only",
-      "purpose": "Demonstrate how an approved documentation MCP would appear in onboarding"
+      "purpose": "Read internal handbooks and procedure articles.",
+      "approvedBy": "Sample approval by the AI Program Lead. Edit before production rollout.",
+      "notes": "Sample example entry. Do not connect this row until your organization replaces it. Edit before production rollout. After that replacement, the IT Helpdesk supplies the connection command. This server may only read. It must not create, edit, or delete documents."
+    },
+    {
+      "id": "internal-policy-readonly",
+      "label": "Internal policy library",
+      "status": "approved",
+      "access": "read-only",
+      "purpose": "Read published internal policies and procedures.",
+      "approvedBy": "Sample approval by the AI Program Lead. Edit before production rollout.",
+      "notes": "Sample example entry. Do not connect this row until your organization replaces it. Edit before production rollout. After that replacement, the IT Helpdesk supplies the connection command. This server may only read. It must not create, edit, or delete policy documents."
     }
   ]
 }
-
